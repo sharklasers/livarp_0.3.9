@@ -119,7 +119,7 @@ Global {
     alpha = 255
     setdocktype = true
     setpartialstrut = true
-    autohide = true
+    autohide = false
     heightWhenHidden = 0
     roundcorners = false
     roundcornersradius = 1
