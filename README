@@ -1,0 +1,51 @@
+livarp_0.3.9 - Debian-based distro by arpinux
+
+presentation
+
+ -livarp is a GNU/Linux distribution based on Debian squeeze and build with the Debian Live project.
+ -livarp is available in iso9660 (format cd) Live/Installcd or img format for usb use.
+ -livarp was first made for fun :) his goal is to make you (re)discover some alternatives window-managers.
+ -made by arpinux : contact@arpinux.org
+ -graphics contributions: pobtott (creator of ACYL), simzer for his xcursor theme ATER, ed1w2ard with his pekwm theme cream2,
+  wiscot for his GTK theme Metro, lgsalvati for his emerald theme full flat black, nale12 with his gtk/emerald suite OMG
+  and at least hannah for her beautiful pekwm theme seablocks.
+
+specificities
+
+livarp try to take the best part of available Debian GNU/Linux applications without loosing accessibility or design.
+
+livarp can handle PIII with 128M ram but is better with a PIV and 512M ram. higher config are just bonus :).
+
+ -95% free (conky, some firmwares and flashplugin for the last 5%)
+ -light, fast and stable: livarp is based on Debian Squeeze, one of the most stable distro atm..
+ -anynoob-inside livarp is made for every user that can read and want to discover alternatives window-managers.
+ -9 sessions available from live to install: vtwm, dwm, echinuswm, awesomewm, evilwm, pekwm, wmfs, fluxbox and compiz stand-alone.
+ -livarp-xs-maker, this script transform your livarp in livarp-xs (mono-session) by removing all unneeded sessions.
+ -livarp help center, a complete documentation available locally in your distribution including all the wiki docs.
+ -composite management with xcompmgr and transset-df.
+ -no graphical session-manager: your session is launched by startx, then a clean zenity dialog window appears to let you choose your session.
+ -auto-mounting handled by udisks-glue with dzen2 notifications.
+ -gnome-network-manager for network-management.
+
+applications
+
+ -terminal: urxvtc/d
+ -file-manager: rox-filer - ranger
+ -web-browser: luakit - firefox - w3m
+ -text-editor: geany - vim
+ -office: abiword - gnumeric - evince
+ -graph: gpicview - gimp - gcolor2
+ -tchat: weechat - mcabber
+ -mail: claws-mail
+ -ftp: filezilla
+ -torrent: transmission
+ -media: gnome-mplayer - mocp - brasero
+ -infos system: conky - htop - hardinfo
+ -auto-mount: udisks-glue
+ -utils: catfish - baobab - pyrenamer - file-roller
+ -system: synaptic - bum - gparted
+ -dev: build-essential - dpkg-dev - g++ - gcc - git
+ -menus: fbpanel - compiz-deskmenu - dmenu
+ -panels: fbpanel - tint2
+ -misc: xscreensaver - dzen2 - grandr
+
