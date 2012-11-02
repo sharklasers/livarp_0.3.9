@@ -60,7 +60,7 @@ TEXT
 ├────┤${time %A}${color1}${time %d}${color}${time %B}
 │    └${color1}up${color}${uptime_short}
 │
-├──┬─${color1}cpu${color}   ${cpugraph cpu1 8,55 151515 aaaaaa}   ${cpugraph cpu2 8,55 151515 aaaaaa}
+├──┬─${color1}cpu${color}   ${cpugraph 8,110 151515 aaaaaa}
 │  └─┬──${color1}${cpu cpu0}${color}%  ${color1}${freq_g}${color}Ghz  ${color1}${acpitemp}${color}°C
 │    ├───────Processes ${color1}$running_processes/${color}$processes
 │    │  name${goto 130}pid    cpu    mem
@@ -79,23 +79,15 @@ TEXT
 ├──┬─${color1}hdd${color}
 │  └─┬─ / ${goto 100}${color1}${fs_used_perc /}${color}%   ${color1}${fs_used /}${color}/${fs_size /}
 │    └─${color1}i/o${color}read${color1}${diskio_read sda1}${color}/s write${color1}${diskio_write sda1}${color}/s ${diskiograph /dev/sda1 8,50 151515 aaaaaa}
-${if_running audacious}│
-├────┬─${color1}audacious${color}${exec audtool --playback-status}${color}
-│    ├─${color1}${exec audtool --current-song}${color}by${color1}${exec audtool --current-song-tuple-data artist}${color}
-│    ├─${execibar 0.5  expr 100 \* $(audtool --current-song-output-length-seconds) \/ $(audtool --current-song-length-seconds) } ${color1}${execi 0.5 audtool --current-song-length}${color}
-│    └─${color}volume${color}${if_mixer_mute}${color1}muted${color}${else}${color1}${mixer}${color}%${endif}
-│${else}│$endif 
+│
 ${if_running mocp}├────┬─${color1}moc${color}${execpi 2 mocp -Q %state}${color}
 │    ├─${color1}${execpi 2 mocp -Q %song}${color}by${color1}${execpi 2 mocp -Q %artist}${color}
 │    ├─${color1}${execpi 2 mocp -Q %ct}${color}${execpi 2 mocp -Q %tt}${color}
 │    └─${color}volume${color}${if_mixer_mute}${color1}muted${color}${else}${color1}${mixer}${color}%${endif}
 │${else}│$endif
-${if_existing /sys/class/power_supply/BAT0}├──${if_match ${exec curr=`cat /sys/class/power_supply/BAT0/current_now`; volt=`cat /sys/class/power_supply/BAT0/voltage_now`; expr $curr \* $volt / 1000000000} > 0}┬─Battery0${color1}${battery BAT0}${color}${battery_time}
-│  └─${color1}${exec curr=`cat /sys/class/power_supply/BAT0/current_now`; volt=`cat /sys/class/power_supply/BAT0/voltage_now`; expr $curr \* $volt / 1000000000}${color}mW${else}─Battery0${color1}${battery BAT0}${color}${battery_time}${endif}
-│${endif}${if_existing /sys/class/power_supply/BAT1}
-├──${if_match ${exec curr=`cat /sys/class/power_supply/BAT1/current_now`; volt=`cat /sys/class/power_supply/BAT1/voltage_now`; expr $curr \* $volt / 1000000000} > 0}┬─Battery1${color1}${battery BAT1}${color}${battery_time}
-│  └─${color1}${exec curr=`cat /sys/class/power_supply/BAT1/current_now`; volt=`cat /sys/class/power_supply/BAT1/voltage_now`; expr $curr \* $volt / 1000000000}${color}mW${else}─Battery1${color1}${battery BAT1}${color}${battery_time}${endif}
-│${endif}${if_gw}
+${if_existing /sys/class/power_supply/BAT0}├────Battery0${color1}${battery BAT0}${color}${battery_time}${else}${if_existing /sys/class/power_supply/BAT1}
+├────Battery1${color1}${battery BAT1}${color}${battery_time}${else}│${endif}${endif}
+│${if_gw}
 └──┬─${color1}network${color}
  ${if_up eth0}  ├───┬─${color1}wired${color}___${addrs eth0}/${color1}${texeci 600 ~/bin/ip.sh}${color}
    │   ├─down${color1}${downspeed eth0}${color}/s${goto 150}${downspeedgraph eth0 8,100 151515 aaaaaa}
@@ -103,7 +95,7 @@ ${if_existing /sys/class/power_supply/BAT0}├──${if_match ${exec curr=`cat 
  ${if_up wlan0}  ├──┬─${color1}wifi${color}___${addrs wlan0}/${color1}${texeci 600 ~/bin/ip.sh}${color}
    │  │ ├─${color1}${wireless_essid wlan0}${color}qual${color1}${wireless_link_qual_perc wlan0}${color}%
    │  │ └─${color1}${wireless_ap wlan0}${color}
-   │  ├─down${color1}${downspeed wlan0}${color}/s${goto 150}${downspeedgraph eth3 8,100 151515 aaaaaa}
+   │  ├─down${color1}${downspeed wlan0}${color}/s${goto 150}${downspeedgraph wlan0 8,100 151515 aaaaaa}
    │  └─up${color1}${upspeed wlan0}${color}/s${goto 150}${upspeedgraph wlan0 8,100 151515 aaaaaa}${else}  ├─no wlan0 connection${endif}
    │
    └─${if_match ${tcp_portmon 1 65535 count} > 0}┬─${color}tcpConnections${color1}${tcp_portmon 1 65535 count}${color}
@@ -114,4 +106,3 @@ ${if_existing /sys/class/power_supply/BAT0}├──${if_match ${exec curr=`cat 
      ${if_match ${tcp_portmon 1 65535 count} > 4 }└─${tcp_portmon 1 65535 rhost 4}(${tcp_portmon 1 65535 rip 4}):${color1}${tcp_portmon 1 65535 rport 4}${color}${else}${endif}${else}no${color1}Tcp${color}connection${endif}
 ${else}
 ┘${endif}
-

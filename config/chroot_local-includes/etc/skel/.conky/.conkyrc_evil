@@ -52,5 +52,5 @@ use_spacer right
 #  Output
 ##############################################
 TEXT
-${goto 330}${color2}${time %I:%M} ${color}${time %a %d %b} ${goto 440}${color1}CPU $cpu % $color ${color3}RAM $memperc % ${color grey60}HDD ${fs_used_perc /} %${color}  Uptime ${uptime_short} ${if_up eth0}${alignr 5}Up${color6} ${upspeed eth0}${color} Dl ${color7}${downspeed eth0}${color}${else}${endif} 
+${goto 330}${color2}${time %I:%M} ${color}${time %a %d %b} ${goto 440}${color1}CPU $cpu % $color ${color3}RAM $memperc % ${color grey60}HDD ${fs_used_perc /} %${color}  Uptime ${uptime_short} ${if_up eth0}${alignr 5}Up${color6} ${upspeed eth0}${color} Dl ${color7}${downspeed eth0}${color}${else}${if_up eth1}${alignr 5}Up${color6} ${upspeed eth1}${color} Dl ${color7}${downspeed eth1}${color}${else}${if_up wlan0}${alignr 5}Up${color6} ${upspeed wlan0}${color} Dl ${color7}${downspeed wlan0}${color}${else}${endif}${endif}${endif} 
 ${alignr}${if_running mocp}${color2}moc${color}${if_match "${exec mocp -Q %state}" != "PLAY"}  ${exec mocp -Q %state}${else}>> ${color2}${exec mocp -Q %song}${color} by ${color grey60}${exec mocp -Q %artist}${color} ${exec mocp -Q %ct}/${exec mocp -Q %tt}${endif}${else}no zik  ${endif} 
