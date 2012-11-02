@@ -1,0 +1,322 @@
+<menu>
+  <item type="launcher">
+    <name mode="exec">date +%D\ %H:%M</name>
+    <icon>gnome-panel-clock</icon>
+    <command>osmo</command>
+  </item>
+  <separator/>
+  <item type="launcher">
+    <name>terminal</name>
+    <icon>gnome-terminal</icon>
+    <command>urxvtc</command>
+  </item>
+  <item type="launcher">
+    <name>file-manager</name>
+    <command>rox-filer</command>
+    <icon>folder_home</icon>
+  </item>
+  <item type="launcher">
+    <icon>folder_home</icon>
+    <command>urxvtc -e ranger</command>
+    <name>ranger (cli)</name>
+  </item>
+  <item type="launcher">
+    <icon>firefox</icon>
+    <command>firefox .startpage/index.html</command>
+    <name>web-browser</name>
+  </item>
+  <separator/>
+  <menu name="livapps">
+    <menu name="internet">
+      <item type="launcher">
+        <name>firefox</name>
+        <icon>gnome-web-browser</icon>
+        <command>firefox .startpage/index.html</command>
+      </item>
+      <item type="launcher">
+        <name>luakit</name>
+        <icon>luakit</icon>
+        <command>luakit .startpage/index.html</command>
+      </item>
+      <item type="launcher">
+        <name>claws-mail</name>
+        <icon>claws-mail</icon>
+        <command>claws-mail</command>
+      </item>
+      <item type="launcher">
+        <command>urxvtc -e weechat-curses</command>
+        <name>irc weechat</name>
+        <icon>pidgin</icon>
+      </item>
+      <item type="launcher">
+        <name>jabber mcabber</name>
+        <icon>pidgin</icon>
+        <command>urxvtc -e mcabber</command>
+      </item>
+      <item type="launcher">
+        <icon>filezilla</icon>
+        <command>filezilla</command>
+        <name>filezilla</name>
+      </item>
+      <item type="launcher">
+        <name>transmission</name>
+        <icon>transmission</icon>
+        <command>transmission</command>
+      </item>
+    </menu>
+    <menu name="graphics">
+      <item type="launcher">
+        <name>gpicview</name>
+        <icon>gpicview</icon>
+        <command>gpicview</command>
+      </item>
+      <item type="launcher">
+        <name>gimp</name>
+        <icon>gimp</icon>
+        <command>gimp</command>
+      </item>
+      <item type="launcher">
+        <name>select color</name>
+        <icon>gcolor2</icon>
+        <command>gcolor2</command>
+      </item>
+      <item type="launcher">
+        <name>select font</name>
+        <icon>gnome-specimen</icon>
+        <command>xfontsel</command>
+      </item>
+      <menu name="screenshot">
+        <item type="launcher">
+          <name>now</name>
+          <command>scrot</command>
+        </item>
+        <item type="launcher">
+          <name>in 5 secondes</name>
+          <command>scrot -d 5</command>
+        </item>
+        <item type="launcher">
+          <name>in a zone</name>
+          <command>scrot -s</command>
+        </item>
+      </menu>
+    </menu>
+    <menu name="media">
+      <item type="launcher">
+        <name>mplayer</name>
+        <icon>mplayer</icon>
+        <command>gnome-mplayer</command>
+      </item>
+      <item type="launcher">
+        <name>mocp</name>
+        <icon>rhythmbox</icon>
+        <command>urxvtc -e mocp</command>
+      </item>
+      <item type="launcher">
+        <name>brasero</name>
+        <icon>brasero</icon>
+        <command>brasero</command>
+      </item>
+      <item type="launcher">
+        <name>volume</name>
+        <icon>gnome-alsamixer-icon</icon>
+        <command>urxvtc -T sound -e alsamixer</command>
+      </item>
+    </menu>
+    <menu name="office">
+      <item type="launcher">
+        <name>abiword</name>
+        <icon>abiword</icon>
+        <command>abiword</command>
+      </item>
+      <item type="launcher">
+        <name>gnumeric</name>
+        <icon>gnumeric</icon>
+        <command>gnumeric</command>
+      </item>
+      <item type="launcher">
+        <name>text editor</name>
+        <icon>geany</icon>
+        <command>geany</command>
+      </item>
+      <item type="launcher">
+        <name>pdf viewer</name>
+        <icon>evince</icon>
+        <command>evince</command>
+      </item>
+      <item type="launcher">
+        <name>vim</name>
+        <icon>vim</icon>
+        <command>urxvtc -T editor -e vim</command>
+      </item>
+    </menu>
+    <menu name="utils">
+      <item type="launcher">
+        <name>archiver</name>
+        <icon>file-roller</icon>
+        <command>file-roller</command>
+      </item>
+      <item type="launcher">
+        <name>catfish</name>
+        <icon>catfish</icon>
+        <command>catfish</command>
+      </item>
+      <item type="launcher">
+        <name>calculator</name>
+        <icon>gnome-calculator</icon>
+        <command>xcalc</command>
+      </item>
+      <item type="launcher">
+        <name>brasero</name>
+        <icon>brasero</icon>
+        <command>brasero</command>
+      </item>
+      <item type="launcher">
+        <name>volume</name>
+        <icon>gnome-alsamixer-icon</icon>
+        <command>urxvtc -T sound -e alsamixer</command>
+      </item>
+      <item type="launcher">
+        <name>htop</name>
+        <icon>htop</icon>
+        <command>urxvtc -e htop</command>
+      </item>
+      <item type="launcher">
+        <name>pyrenamer</name>
+        <icon>pyrenamer</icon>
+        <command>pyrenamer</command>
+      </item>
+      <item type="launcher">
+        <name>force quit</name>
+        <command>xkill</command>
+        <icon>xkill</icon>
+      </item>
+    </menu>
+  </menu>
+  <menu name="config">
+    <item type="launcher">
+      <name>interface</name>
+      <command>lxappearance</command>
+      <icon>style</icon>
+    </item>
+    <item type="launcher">
+      <name>wallpaper</name>
+      <command>nitrogen</command>
+      <icon>gnome-settings-background</icon>
+    </item>
+    <item type="launcher">
+      <name>display</name>
+      <icon>gnome-display-properties</icon>
+      <command>grandr</command>
+    </item>
+    <item type="launcher">
+      <name>edit ~/.xinitrc</name>
+      <command>geany .xinitrc</command>
+      <icon>gtk-edit</icon>
+    </item>
+    <item type="launcher">
+      <name>web startpage</name>
+      <icon>gtk-edit</icon>
+      <command>geany .startpage/index.html .startpage/style.css</command>
+    </item>
+    <menu name="composite">
+      <item type="launcher">
+        <name>stop composite</name>
+        <command>xcompmgr_livarp -s</command>
+        <icon>dialog-close</icon>
+      </item>
+      <item type="launcher">
+        <name>light effect</name>
+        <icon>gtk-zoom-out</icon>
+        <command>xcompmgr_livarp -l</command>
+      </item>
+      <item type="launcher">
+        <name>medium effect</name>
+        <icon>gtk-zoom-fit</icon>
+        <command>xcompmgr_livarp -m</command>
+      </item>
+      <item type="launcher">
+        <name>full effect</name>
+        <icon>gtk-zoom-in</icon>
+        <command>xcompmgr_livarp -f</command>
+      </item>
+    </menu>
+    <menu name="deskmenu">
+      <item type="launcher">
+        <command>compiz-deskmenu-editor</command>
+        <name>edit menu</name>
+        <icon>drakmenustyle</icon>
+      </item>
+      <item type="reload"/>
+    </menu>
+  </menu>
+  <menu name="system">
+    <item type="launcher">
+      <name>boot-up manager</name>
+      <icon>scim-setup</icon>
+      <command>gksudo bum</command>
+    </item>
+    <item type="launcher">
+      <name>package-manager</name>
+      <icon>synaptic</icon>
+      <command>gksudo synaptic</command>
+    </item>
+    <item type="launcher">
+      <name>partition editor</name>
+      <icon>gparted</icon>
+      <command>gksudo gparted</command>
+    </item>
+    <item type="launcher">
+      <name>hardinfo</name>
+      <icon>hwbrowser</icon>
+      <command>hardinfo</command>
+    </item>
+    <item type="launcher">
+      <name>livarp-xs-maker</name>
+      <icon>cdrom_unmount</icon>
+      <command>/usr/local/bin/livarp-xs.sh</command>
+    </item>
+    <menu name="usb devices">
+      <item type="launcher">
+        <name mode="exec">lsusb</name>
+        <icon>drive-removable-media</icon>
+      </item>
+    </menu>
+    <menu name="pci bus &amp; devices">
+      <item type="launcher">
+        <name mode="exec">lspci</name>
+        <command>hardinfo</command>
+        <icon>hwbrowser</icon>
+      </item>
+    </menu>
+    <menu name="disk usage">
+      <item type="launcher">
+        <name mode="exec">df -h</name>
+        <command>baobab</command>
+        <icon>baobab</icon>
+      </item>
+    </menu>
+  </menu>
+  <menu name="help">
+    <item type="launcher">
+      <name>livarp help center</name>
+      <icon>help</icon>
+      <command>luakit /usr/share/livarp/help_center/index.html</command>
+    </item>
+    <item type="launcher">
+      <name>wiki livarp</name>
+      <command>firefox http://arpinux.org/x/doku.php/start:livarp:livarp_039_gb</command>
+      <icon>help</icon>
+    </item>
+    <item type="launcher">
+      <name>wiki arpinux.org</name>
+      <icon>help</icon>
+      <command>firefox http://arpinux.org/x</command>
+    </item>
+  </menu>
+  <separator/>
+  <item type="launcher">
+    <name>exit</name>
+    <icon>application-exit</icon>
+    <command>shutdown.sh</command>
+  </item>
+</menu>

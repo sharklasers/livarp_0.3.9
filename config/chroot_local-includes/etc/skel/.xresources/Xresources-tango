@@ -1,0 +1,229 @@
+! author: arpinux <http://arpinux.org>
+! ~/.Xresources configuration file
+!-----------------------------------------------------------------------
+
+!tango colors
+#define S_base03        #555753
+#define S_base02        #2e3436
+#define S_base01        #8ae234
+#define S_base00        #fce94f
+#define S_base0         #729fcf
+#define S_base1         #00f5e9
+#define S_base2         #d3d7cf
+#define S_base3         #eeeeec
+#define S_yellow        #c4a000
+#define S_orange        #ef2929
+#define S_red           #cc0000
+#define S_magenta       #75507b
+#define S_violet        #ad7fa8
+#define S_blue          #00afff
+#define S_cyan          #0b939b
+#define S_green         #4e9a06
+
+*background:            S_base03
+*foreground:            S_base00
+*fading:                40
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+
+!! green dark/light
+*color2:                S_green
+*color10:               S_base01
+
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_base0
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
+
+! dzen2 ----------------------------------------------------------------
+dzen2.font: -*-fixed-*-*-*-*-10-70-*-*-*-*-*-*
+
+! Xcursor settings -----------------------------------------------------
+Xcursor.theme: ATER_Blue
+
+! Xft settings ---------------------------------------------------------
+Xft.dpi: 96
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.antialias: 1
+Xft.rgba: rgb
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+
+! xterm ----------------------------------------------------------------
+xterm*saveLines: 1000
+xterm*AllowIconInput: on
+xterm*Border: gray
+xterm*DeiconifyWarp: off
+xterm*Font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+xterm*InternalBorder: 1
+xterm*MarginBell: off
+xterm*MenuFont: fixed8
+xterm*Mouse: yellow
+xterm*TitleFont: vtbold
+xterm*charClass: 33:48,37:48,45-47:48,64:48
+xterm*colorAttrMode: true
+xterm*colorMode: true
+xterm*curses: on
+xterm*cutNewline: off
+xterm*jumpScroll: on
+xterm*multiClickTime: 500
+xterm*multiScroll: on
+xterm*reverseVideo: on
+xterm*reverseWrap: off
+xterm*scrollBar: off
+
+! xcolorsel ------------------------------------------------------------
+xcolorsel*Font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+xcolorsel.geometry: 399x595
+xcolorsel*displayFormat: #rrggbb
+xcolorsel*maxRows: 99
+
+! xosview --------------------------------------------------------------
+xosview*font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+xosview*net: true
+xosview*netIface: eth0
+
+! xscreensaver ---------------------------------------------------------
+!font settings
+xscreensaver.Dialog.headingFont: -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont: -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont: -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont: -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont: -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont: -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont: -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground: #ffffff
+xscreensaver.Dialog.background: #111111
+xscreensaver.Dialog.topShadowColor: #111111
+xscreensaver.Dialog.bottomShadowColor: #111111
+xscreensaver.Dialog.Button.foreground: #666666
+xscreensaver.Dialog.Button.background: #ffffff
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground: #666666
+xscreensaver.Dialog.text.background: #ffffff
+xscreensaver.Dialog.internalBorderWidth: 24
+xscreensaver.Dialog.borderWidth: 20
+xscreensaver.Dialog.shadowThickness: 2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground: #006aff
+xscreensaver.passwd.thermometer.background: #000000
+xscreensaver.passwd.thermometer.width: 8
+!datestamp format--see the strftime(3) manual page for details
+xscreensaver.dateFormat: %I:%M%P %a %b %d, %Y
+
+
+! xclock ---------------------------------------------------------------
+xclock*update: 1
+xclock*analog: false
+xclock*font: -*-fixed-*-*-*-*-8-*-*-*-*-*-*-*
+
+! urxvt config ---------------------------------------------------------
+URxvt.termName: rxvt-unicode
+URxvt.imLocale: fr_FR.UTF-8
+URxvt.saveLines: 5000
+URxvt.cursorBlink: true
+URxvt.cursorColor: #e0e080
+URxvt.throughColor: #8080f0
+URxvt.highlightColor: #343434
+!URxvt.transparent: true
+URxvt.visualBell: true
+URxvt.urgentOnBell: true
+!URxvt.tintColor: #999999
+URxvt.font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urlLauncher: luakit
+URxvt.matcher.button: 3
+URxvt.perl-ext-common: default,matcher
+! colors
+! link
+URxvt.colorUL: #4E9A06
+
+! aterm ----------------------------------------------------------------
+Aterm*transparent: true
+Aterm*shading: 80
+Aterm*cursorColor: #d8d8d8
+Aterm*scrollbars: false
+Aterm*saveLines: 2000
+Aterm*tinting: gray
+Aterm*scrollBar: false
+Aterm*transpscrollbar: true
+Aterm*borderwidth: 0
+Aterm*font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+Aterm*geometry: 80x25
+Aterm*fading: 70 
+
+! xcalc ----------------------------------------------------------------
+xcalc*geometry: 200x275
+xcalc.ti.bevel.background: #111111
+xcalc.ti.bevel.screen.background: #000000
+xcalc.ti.bevel.screen.DEG.background: #000000
+xcalc.ti.bevel.screen.DEG.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.GRAD.background: #000000
+xcalc.ti.bevel.screen.GRAD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.RAD.background: #000000
+xcalc.ti.bevel.screen.RAD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.INV.background: #000000
+xcalc.ti.bevel.screen.INV.foreground: Red
+xcalc.ti.bevel.screen.LCD.background: #000000
+xcalc.ti.bevel.screen.LCD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.LCD.shadowWidth: 0
+xcalc.ti.bevel.screen.M.background: #000000
+xcalc.ti.bevel.screen.M.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.P.background: #000000
+xcalc.ti.bevel.screen.P.foreground: Yellow
+xcalc.ti.Command.foreground: White
+xcalc.ti.Command.background: #777777
+xcalc.ti.button5.background: Orange3
+xcalc.ti.button19.background: #611161
+xcalc.ti.button18.background: #611161
+xcalc.ti.button20.background: #611111
+!uncomment to change label on division button
+!xcalc.ti.button20.label:      /
+xcalc.ti.button25.background: #722222
+xcalc.ti.button30.background: #833333
+xcalc.ti.button35.background: #944444
+xcalc.ti.button40.background: #a55555
+xcalc.ti.button22.background: #222262
+xcalc.ti.button23.background: #222262
+xcalc.ti.button24.background: #222272
+xcalc.ti.button27.background: #333373
+xcalc.ti.button28.background: #333373
+xcalc.ti.button29.background: #333373
+xcalc.ti.button32.background: #444484
+xcalc.ti.button33.background: #444484
+xcalc.ti.button34.background: #444484
+xcalc.ti.button37.background: #555595
+xcalc.ti.button38.background: #555595
+xcalc.ti.button39.background: #555595
+XCalc*Cursor: hand2
+XCalc*ShapeStyle: rectangle
+!
+! eof ------------------------------------------------------------------

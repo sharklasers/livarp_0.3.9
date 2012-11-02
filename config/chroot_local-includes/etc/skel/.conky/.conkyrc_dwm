@@ -1,0 +1,20 @@
+# conky configuration <arpinux2012>
+# For help with conky, please see:
+# http://arpinux.org/x/doku.php/start:conky
+##############################################
+#  Settings
+##############################################
+background no
+out_to_x no
+out_to_console yes
+update_interval 2
+total_run_times 0
+uppercase no
+short_units yes
+use_spacer none
+if_up_strictness address
+##############################################
+#  Output
+##############################################
+TEXT
+CPU:${cpu}%   RAM:${memperc}% $mem   HDD:${fs_used_perc /}%   ${time %d/%m %I:%M}

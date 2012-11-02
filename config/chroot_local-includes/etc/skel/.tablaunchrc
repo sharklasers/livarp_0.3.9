@@ -1,0 +1,18 @@
+# tablaunchrc
+# file format: label command icon big_icon
+ranger "urxvtc -e ranger"
+filer "rox"
+terminal "urxvtc"
+internet "firefox"
+tchat "urxvtc -e weechat-curses"
+mail "claws-mail"
+zik "urxvtc -T zik-player -e mocp"
+gimp "gimp"
+inkscape "inkscape"
+livarp "firefox http://arpinux.org/livarp"
+deviantart "firefox http://deviantart.com"
+crunch "firefox http://crunchbanglinux-fr"
+pics "rox ~/pics"
+docs "rox ~/docs"
+.config "rox ~/.config"
+exit "dmenu-quit.sh"

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=w3m
+GenericName=CLI Web Browser
+X-GNOME-FullName=w3m cli web browser
+Exec=urxvtc -e w3m http://arpinux.org/livarp_start
+Icon=w3m
+Terminal=true
+TryExec=w3m http://arpinux.org/livarp_start
+Type=Application
+Categories=Network;GTK;

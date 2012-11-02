@@ -1,0 +1,136 @@
+# livarp fluxbox menu --------------------------------------------------
+#------------------------------------------------------------ usual apps
+[begin] (livarp)
+[exec] (Terminal) {urxvtc}
+[exec] (Rox-filer) {rox-filer}
+[exec] (Ranger (cli\)) {urxvtc -e ranger}
+[exec] (Luakit browser) {luakit http://arpinux.org/livarp_start}
+[exec] (Claws-Mail) {claws-mail}
+[exec] (Weechat (cli\)) {urxvtc -e weechat-curses}
+[exec] (Geany editor) {geany}
+[separator]
+#------------------------------------------------------------------ apps
+[submenu] (Applications)
+    #--------------------------------------------------------------- web
+    [submenu] (web)
+        [exec] (luakit) {luakit http://arpinux.org/livarp_start}
+        [exec] (firefox) {firefox http://arpinux.org/livarp_start}
+        [exec] (claws-mail) {claws-mail}
+        [exec] (weechat) {urxvtc -e weechat-curses}
+        [exec] (mcabber) {urxvtc -e mcabber}
+        [exec] (filezilla) {filezilla}
+        [exec] (transmission) {transmission}
+    [end]
+    #------------------------------------------------------------- graph
+    [submenu] (Graphics)
+        [exec] (gpicview) {gpicview}
+        [exec] (gimp) {gimp}
+        [exec] (gcolor2) {gcolor2}
+        [exec] (xcolorsel) {xcolorsel}
+        [exec] (xfontsel) {xfontsel}
+        [submenu] (screenshot)
+            [exec] (now) {scrot}
+            [exec] (in 5 sec.) {scrot -d 5}
+            [exec] (in a zone) {scrot -s}
+        [end]
+    [end]
+    #------------------------------------------------------------- media
+    [submenu] (Media)
+        [exec] (mplayer) {gnome-mplayer}
+        [exec] (mocp) {urxvtc -T player -e mocp}
+        [exec] (brasero) {brasero}
+        [exec] (volume) {urxvtc -T sound -e alsamixer}
+    [end]
+    #------------------------------------------------------------ office
+    [submenu] (Office)
+        [exec] (abiword) {abiword}
+        [exec] (gnumeric) {gnumeric}
+        [exec] (geany) {geany}
+        [exec] (evince) {evince}
+        [exec] (vim) {urxvtc -e vim}
+    [end]
+    #------------------------------------------------------------- utils
+    [submenu] (Utils)
+        [exec] (catfish) {catfish}
+        [exec] (archiver) {file-roller}
+        [exec] (calculator) {xcalc}
+        [exec] (htop) {urxvtc -e htop}
+        [exec] (pyrenamer) {pyrenamer}
+        [exec] (force quit) {xkill}
+    [end]
+    #------------------------------------------------------------ debian
+    [submenu] (Debian) {}
+        [include] (/etc/X11/fluxbox/fluxbox-menu)
+    [end]
+[end]
+#---------------------------------------------------------------- config
+[submenu] (Configuration)
+    [exec] (~.xinitrc) {geany .xinitrc}
+    [exec] (flux startup) {geany bin/start/fluxbox_start.sh}
+    [submenu] (Fluxbox) {}
+        [exec] (fluxbox menu) {geany .fluxbox/menu}
+        [exec] (fluxbox keys) {geany .fluxbox/keys}
+        [exec] (fluxbox rules) {geany .fluxbox/apps}
+        [config] (fluxbox config)
+        [submenu] (fluxbox styles) {}
+            [stylesdir] (/usr/share/fluxbox/styles)
+            [stylesdir] (~/.fluxbox/styles)
+        [end]
+        [exec] (man fluxbox) {urxvtc -e man fluxbox}
+        [reconfig] (Reconfigure)
+        [restart] (Restart)
+    [end]
+    [exec] (interface) {lxappearance}
+    [exec] (wallpaper) {nitrogen}
+    [exec] (edit conky) {geany .conky/.conkyrc_fluxbox}
+    [exec] (display) {grandr}
+    [submenu] (composite) {}
+        [exec] (stop composite) {xcompmgr_livarp -s}
+        [exec] (light composite) {xcompmgr_livarp -l}
+        [exec] (medium composite) {xcompmgr_livarp -m}
+        [exec] (full composite) {xcompmgr_livarp -f}
+    [end]
+    [submenu] (cli colorscheme)
+        [submenu] (livarp)
+            [exec] (preview) {feh -B black --geometry 480x370+50+50 .xresources/cli_color_livarp.png}
+            [exec] (select) {~/.xresources/cli_colors_livarp.sh}
+        [end]
+        [submenu] (livarp clear)
+            [exec] (preview) {feh -B black --geometry 480x370+50+50 .xresources/cli_color_livarp_clear.png}
+            [exec] (select) {~/.xresources/cli_colors_livarp_clear.sh}
+        [end]
+        [submenu] (Solarized)
+            [exec] (preview) {feh -B black --geometry 480x370+50+50 .xresources/cli_color_solarized.png}
+            [exec] (select) {~/.xresources/cli_colors_solarized.sh}
+        [end]
+        [submenu] (Solarized clear)
+            [exec] (preview) {feh -B black --geometry 480x370+50+50 .xresources/cli_color_solarized_clear.png}
+            [exec] (select) {~/.xresources/cli_colors_solarized_clear.sh}
+        [end]
+        [submenu] (tango)
+            [exec] (preview) {feh -B black --geometry 480x370+50+50 .xresources/cli_color_tango.png}
+            [exec] (select) {~/.xresources/cli_colors_tango.sh}
+        [end]
+    [end]
+    [exec] (web startpage) {geany .startpage/index.html .startpage/style.css}
+[end]
+#----------------------------------------------------------------- admin
+[submenu] (Administration)
+    [exec] (root term) {urxvtc -e su}
+    [exec] (gparted) {gksudo gparted}
+    [exec] (package manager) {gksudo synaptic}
+    [exec] (info system) {hardinfo}
+    [exec] (disk usage) {baobab}
+    [exec] (default apps) {urxvtc -e sudo update-alternatives --all}
+    [exec] (bootup manager) {gksudo bum}
+    [exec] (livarp-xs-maker) {/usr/local/bin/livarp-xs.sh}
+[end]
+#------------------------------------------------------------------ help
+[submenu] (Livarp help)
+    [exec] (help center) {luakit /usr/share/livarp/help_center/index.html}
+    [exec] (main site) {luakit http://arpinux.org/livarp}
+    [exec] (livarp wiki) {luakit http://arpinux.org/x/doku.php/start:livarp}
+    [exec] (livarp #irc) {luakit http://arpinux.org/livarp/irc.html}
+[end]
+[separator]
+[exec] (Exit Menu) {shutdown.sh}

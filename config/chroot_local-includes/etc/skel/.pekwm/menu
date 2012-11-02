@@ -1,0 +1,200 @@
+# Menu config for pekwm
+
+  # Variables
+  INCLUDE = "vars"
+
+  RootMenu = "Pekwm" {
+
+  	Entry = "Run.." { Actions = "ShowCmdDialog" }
+  	Entry = "Term" { Actions = "Exec $TERM &" }
+    Entry = "Filer" { Actions = "Exec $FILER &" }
+    Entry = "Web" { Actions = "Exec $BROWSER .startpage/index.html &" }
+
+  	Separator {}
+    
+    Submenu = "Apps" {
+  	    Submenu = "Graph" {
+  	        Entry = "gpicview" { Actions = "Exec gpicview &" }
+            Entry = "gimp" { Actions = "Exec gimp &" }
+            Entry = "gcolor2" { Actions = "Exec gcolor2 &" }
+            Entry = "font viewer" { Actions = "Exec xfontsel &" }
+  	        Submenu = "screenshot" {
+  	            Entry = "now" { Actions = "Exec scrot &" }
+  	            Entry = "in 5 secs" { Actions = "Exec scrot -d 5 &" }
+  	            Entry = "in a zone" { Actions = "Exec scrot -s &" }
+  	        }
+  	    }
+  	    Submenu = "Web" {
+  	        Entry = "luakit" { Actions = "Exec $BROWSER .startpage/index.html &" }
+  	        Entry = "firefox" { Actions = "Exec firefox .startpage/index.html &" }
+  	        Entry = "IRC" { Actions = "Exec $TERM -e weechat-curses &" }
+            Entry = "jabber" { Actions = "Exec $TERM -e mcabber &" }
+            Entry = "mail" { Actions = "Exec claws-mail &" }
+  	        Entry = "torrent" { Actions = "Exec transmission &" }
+            Entry = "filezilla" { Actions = "Exec filezilla &" }
+  	    }
+  	    Submenu = "Media" {
+  	        Entry = "mplayer" { Actions = "Exec gnome-mplayer &" }
+  	        Entry = "moc" { Actions = "Exec $TERM -e mocp &" }
+  	        Entry = "cd/dvd burner" { Actions = "Exec brasero &" }
+  	        Entry = "volume" { Actions = "Exec $TERM -e alsamixer &" }
+  	    }
+        Submenu = "Office" {
+            Entry = "text editor" { Actions = "Exec geany &" }
+            Entry = "abiword" { Actions = "Exec abiword &" }
+            Entry = "gnumeric" { Actions = "Exec gnumeric &" }
+            Entry = "pdf viewer" { Actions = "Exec evince &" }
+            Entry = "vim" { Actions = "Exec $TERM -e vim &" }
+        }
+  	    Submenu = "Tools" {
+            Entry = "archiver" { Actions = "Exec file-roller &" }
+  	        Entry = "searchtool" { Actions = "Exec catfish &" }
+  	        Entry = "disk usage" { Actions = "Exec baobab &" }
+  	        Entry = "calcul" { Actions = "Exec xcalc &" }
+  	        Entry = "screenshot" { Actions = "Exec scrot" & }
+  	        Entry = "cd/dvd burner" { Actions = "Exec brasero &" }
+  	        Entry = "volume" { Actions = "Exec $TERM -e alsamixer &" }
+  	    }
+  	}
+    Submenu = "Config" {
+        Entry = "interface" {Actions = "Exec lxappearance &"}
+  		Entry = "wallpaper" { Actions = "Exec nitrogen &" }
+  		Submenu = "3D effect" {
+  		    Entry = "no effect" { Actions = "Exec xcompmgr_livarp -s &" }
+            Entry = "light effect" { Actions = "Exec xcompmgr_livarp -l &" }
+            Entry = "medium effect" { Actions = "Exec xcompmgr_livarp -m &" }
+            Entry = "full effect" { Actions = "Exec xcompmgr_livarp -f &" }
+  		}
+  		Entry = "display" { Actions = "Exec grandr &" }
+        Submenu = "conky config" {
+            Entry = "edit conkyrc" { Actions = "Exec $EDITOR .conky/.conkyrc_pekwm &" }
+        }
+        Submenu = "cli colorscheme" {
+            Submenu = "livarp" {
+                Entry = "preview" { Actions = "Exec feh -B black --geometry 480x370+50+50 .xresources/cli_color_livarp.png &" }
+                Entry = "select" { Actions = "Exec ~/.xresources/cli_colors_livarp.sh &" }
+            }
+            Submenu = "livarp clear" {
+                Entry = "preview" { Actions = "Exec feh -B black --geometry 480x370+50+50 .xresources/cli_color_livarp_clear.png &" }
+                Entry = "select" { Actions = "Exec ~/.xresources/cli_colors_livarp_clear.sh &" }
+            }
+            Submenu = "Solarized" {
+                Entry = "preview" { Actions = "Exec feh -B black --geometry 480x370+50+50 .xresources/cli_color_solarized.png &" }
+                Entry = "select" { Actions = "Exec ~/.xresources/cli_colors_solarized.sh &" }
+            }
+            Submenu = "Solarized clear" {
+                Entry = "preview" { Actions = "Exec feh -B black --geometry 480x370+50+50 .xresources/cli_color_solarized_clear.png &" }
+                Entry = "select" { Actions = "Exec ~/.xresources/cli_colors_solarized_clear.sh &" }
+            }
+            Submenu = "tango" {
+                Entry = "preview" { Actions = "Exec feh -B black --geometry 480x370+50+50 .xresources/cli_color_tango.png &" }
+                Entry = "select" { Actions = "Exec ~/.xresources/cli_colors_tango.sh &" }
+            }
+        }
+  	}
+  	Submenu = "Admin" {
+        Entry = "bootup-manager" { Actions = "Exec gksudo bum &" }
+  	    Entry = "debs manager" { Actions = "Exec gksudo synaptic &" }
+  	    Entry = "partitioner" { Actions = "Exec gksudo gparted &" }
+        Entry = "default apps" { Actions = "Exec $TERM -e sudo update-alternatives --all &" }
+        Entry = "disk usage" { Actions = "Exec baobab &" }
+        Entry = "infos system" { Actions = "Exec hardinfo &" }
+  	    Entry = "root term" { Actions = "Exec gksudo $TERM &"}
+  	    Entry = "root filer" { Actions = "Exec gksudo $FILER &" }
+        Entry = "livarp-xs-maker" { Actions = "Exec /usr/local/bin/livarp-xs.sh &" }
+    }
+
+    Separator {}
+
+  	Submenu = "goto" {
+  		SubMenu = "Workspace" {
+  			# Create goto menu once per pekwm config reload. The fast way that
+  			# will work for most if not all users.
+  			COMMAND = "/usr/share/pekwm/scripts/pekwm_ws_menu.sh send"
+  			# Create goto menu every time the menu is opened. The slow way.
+  			# This is what you want if you are using external tools to make
+  			# the amount of workspaces something else than what you define in
+  			# ~/.pekwm/config. You will know if you want this.
+  			# Entry = "" { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_ws_menu.sh send dynamic" }
+  		}
+  		Entry = "Window.." { Actions = "ShowMenu GotoClient True" }
+  	}
+
+    Separator {}
+
+  	Submenu = "Pekwm" {
+  		Submenu = "Themes" {
+  			Entry { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_themeset.sh /usr/share/pekwm/themes" }
+  			Entry { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_themeset.sh ~/.pekwm/themes" }
+  		}
+        Submenu = "Config" {
+  		    Entry = "open pekwm dir" { Actions = "Exec $FILER ~/.pekwm &" }
+  		    Entry = "edit pekwm startup" { Actions = "Exec $EDITOR bin/start/pekwm_start.sh &" }
+  		    Entry = "edit pekwm menu" { Actions = "Exec $EDITOR .pekwm/menu &" }
+  		    Entry = "edit pekwm keys" { Actions = "Exec $EDITOR .pekwm/keys &" }
+  		    Entry = "edit pekwm config" { Actions = "Exec $EDITOR .pekwm/config &" }
+  		    Entry = "edit pekwm rules" { Actions = "Exec $EDITOR .pekwm/autoproperties &" }
+  		}
+        Submenu = "Help" {
+            Entry = "livarp help" { Actions = "Exec $BROWSER /usr/share/livarp/help_center/index.html &" }
+            Entry = "keybinds" { Actions = "Exec $TERM --geometry 70x55+50+50 -e pekwm_keys.sh &" }
+            Entry = "man pekwm" { Actions = "Exec $TERM -e man pekwm &" }
+            Entry = "wiki pekwm(fr)" { Actions = "Exec $BROWSER http://arpinux.org/x/doku.php/start:wm:pekwm &" }
+            Entry = "pekwm main page" { Actions = "Exec $BROWSER http://pekwm.org &" }
+        }
+  		Entry = "Reload" { Actions = "Reload" }
+  		Entry = "Restart" { Actions = "Restart" }
+  		Entry = "Exit" { Actions = "Exit" }
+  	}
+    Entry = "Exit" { Actions = "Exec shutdown.sh &" }
+}
+
+WindowMenu = "Window Menu" {
+  	Entry = "(Un)Stick" { Actions = "Toggle Sticky" }
+  	Entry = "(Un)Shade" { Actions = "Toggle Shaded" }
+  	Entry = "Iconify " { Actions = "Set Iconified" }
+  	Entry = "Command.." { Actions = "ShowCmdDialog" }
+
+  	Submenu = "Maximize" {
+  		Entry = "Full" { Actions = "Toggle Maximized True True" }
+  		Entry = "Horizontal" { Actions = "Toggle Maximized True False" }
+  		Entry = "Vertical" { Actions = "Toggle Maximized False True" }
+  	}
+  	Submenu = "Fill" {
+  		Entry = "Full" { Actions = "MaxFill True True" }
+  		Entry = "Horizontal" { Actions = "MaxFill True False" }
+  		Entry = "Vertical" { Actions = "MaxFill False True" }
+  	}
+  	Submenu = "Stacking" {
+  		Entry = "Raise " { Actions = "Raise" }
+  		Entry = "Lower" { Actions = "Lower" }
+  		Entry = "Always On Top " { Actions = "Toggle AlwaysOnTop" }
+  		Entry = "Always Below" { Actions = "Toggle AlwaysBelow" }
+  	}
+  	Submenu = "Decor" {
+  		Entry = "Decor" { Actions = "Toggle DecorBorder; Toggle DecorTitlebar" }
+  		Entry = "Border" { Actions = "Toggle DecorBorder" }
+  		Entry = "Titlebar" { Actions = "Toggle DecorTitlebar" }
+
+  	}
+  	Submenu = "Skip" {
+  		Entry = "Menus" { Actions = "Toggle Skip Menus" }
+  		Entry = "Focus Toggle" { Actions = "Toggle Skip FocusToggle" }
+  		Entry = "Snap" { Actions = "Toggle Skip Snap" }
+  	}
+  	SubMenu = "Send To" {
+  		# Create sendto menu once per pekwm config reload. The fast way that
+  		# will work for most if not all users.
+  		COMMAND = "/usr/share/pekwm/scripts/pekwm_ws_menu.sh send"
+  		# Create sendto menu every time the menu is opened. The slow way.
+  		# This is what you want if you are using external tools to make
+  		# the amount of workspaces something else than what you define in
+  		# ~/.pekwm/config. You will know if you want this.
+  		# Entry = "" { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_ws_menu.sh send dynamic" }
+  	}
+
+  	Separator {}
+
+  	Entry = "Close" { Actions = "Close" }
+  	Submenu = "Kill" { Entry = "Kill application" { Actions = "Kill" } }
+  }

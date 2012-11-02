@@ -1,0 +1,93 @@
+Introduction
+============
+
+udisks-glue is a tool that can associate udisks events to user-defined
+actions. In that sense, udisks-glue is almost "glue code"[1], hence the name.
+
+udisks (formely known as DeviceKit-disks) is an abstraction layer on top of
+the Linux disks subsystems that, in conjunction with the other DeviceKit
+subprojects, aims to be a replacement for the now almost defunct HAL project.
+
+Like most other recent Linux desktop frameworks, udisks exposes its API via
+DBus to its clients (often desktop environments). Users wishing to have more
+control about what happens when specific disk-related events often have to use
+a tool like halevt[2] or ivmon[3], which work on top of HAL. Now that HAL is
+no longer being actively developed and most distributions are considering
+dropping support for it, those users will have to migrate to a new tool, and
+udisks-glue might as well fill that gap.
+
+udisks-glue should eventually offer the most useful features found in the
+aforementioned projects. As of now, however, only the most basic functionality
+is available (mounting and unmounting removable media). Contributions are
+welcome.
+
+Note that this project is not affiliated with or endorsed by the udisks
+project.
+
+References:
+
+[1]: http://en.wikipedia.org/wiki/Glue_code
+[2]: http://www.nongnu.org/halevt/
+[3]: http://ivman.sourceforge.net/
+
+
+Configuration
+=============
+
+For configuration options and examples, please refer to udisks-glue(1).
+
+
+Future goals
+============
+
+Our main goal is to expand the current functionality in order to provide a
+decent replacement for disk-related use of halevt. Other stuff that's not part
+of udisks might be implemented as well, if it's related enough and not a
+complete hack.
+
+One short-term goal is to provide automatic notifications for mount and
+unmount events (using the FreeDesktop notification standards, preferably). A
+more ambitious goal is to provide scripting support so that users can create
+their own filter parameters.
+
+
+Reporting bugs
+==============
+
+Please use the GitHub issue tracker to post bug reports. If the issue hasn't
+been reported yet and you have a patch, you might skip that step and send me
+the patch directly and I'll apply it as soon as possible.
+
+
+Contributing
+============
+
+Any help is appreciated, please feel free to contribute. I'll review your
+patches and commit them if they are in accordance with this project's goals,
+and you'll be credited for the changes (I may ask you to change a few things
+things before your patches are accepted, though).
+
+For the time being, send your patches to:
+
+Fernando Tarlá Cardoso Lemos <fernandotcl AT gmail.com>
+
+Please format your patches with "git format-patch" and then attach them to an
+e-mail instead of sending the patches inlined in the message. This makes it
+easier for me to apply them.
+
+Another option is to fork the project on GitHub and send me pull requests.
+
+If you want to implement a new feature, please ping me first so that we can
+discuss it and also so that we don't end up implementing the same thing twice.
+
+
+Authors
+=======
+
+udisks-glue was created by:
+
+Fernando Tarlá Cardoso Lemos <fernandotcl AT gmail.com>
+
+The following people have contributed to this project (in alphabetical order):
+
+Jan Palus <jan.palus AT gmail.com>

@@ -1,0 +1,4 @@
+#!/bin/sh
+file=/var/log/messages
+tail -f $file | ccze -A 
+

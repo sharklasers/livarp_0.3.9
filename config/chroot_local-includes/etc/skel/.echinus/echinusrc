@@ -1,0 +1,126 @@
+! --------------------------
+! file: ~/.echinus/echinusrc
+! author: arpinux <http://arpinux.org>
+! vim:fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
+! --------------------------------------------------
+
+! colors ---------------------------------------------------------------
+Echinus*selected.border: #aaaaaa
+Echinus*selected.button: #d3d7cf
+Echinus*selected.bg: #262626
+Echinus*selected.fg: #d3d7cf
+
+Echinus*normal.border: #262626
+Echinus*normal.button: #262626
+Echinus*normal.bg: #262626
+Echinus*normal.fg: #b0b4ac
+! border ---------------------------------------------------------------
+Echinus*border: 1
+! pixmaps --------------------------------------------------------------
+Echinus*button.iconify.pixmap: iconify.xbm
+Echinus*button.maximize.pixmap: max.xbm
+Echinus*button.close.pixmap: close.xbm
+! behavior -------------------------------------------------------------
+Echinus*sloppy: 2
+Echinus*opacity: 0.8
+Echinus*decoratetiled: 1
+Echinus*hidebastards: 0
+Echinus*mwfact: 0.6
+Echinus*nmaster: 1
+! misc -----------------------------------------------------------------
+Echinus*title: 10
+Echinus*font: fixed-8
+Echinus*modkey: A
+! default layout -------------------------------------------------------
+Echinus*deflayout: b
+! tags -----------------------------------------------------------------
+Echinus*tags.number: 5
+Echinus*tags.name0: 1
+Echinus*tags.name1: 2
+Echinus*tags.name2: 3
+Echinus*tags.name3: 4
+Echinus*tags.name4: 5
+! keys -----------------------------------------------------------------
+Echinus*togglestruts: A + b
+Echinus*togglemonitor: A + Up
+Echinus*focusnext: A + j
+Echinus*focusprev: A + k
+!Echinus*viewprevtag: A + Tab
+Echinus*viewlefttag: C + Left
+Echinus*viewrighttag: C + Right
+!Echinus*quit: CA + Backspace
+Echinus*restart: CA + r = echinus
+Echinus*killclient: W + q
+Echinus*togglefloating: A + space
+Echinus*zoom: A + Return
+
+Echinus*view0: A + F1
+Echinus*view1: A + F2
+Echinus*view2: A + F3
+Echinus*view3: A + F4
+Echinus*view4: A + F5
+
+Echinus*tag0: AS + F1
+Echinus*tag1: AS + F2
+Echinus*tag2: AS + F3
+Echinus*tag3: AS + F4
+Echinus*tag4: AS + F5
+
+Echinus*toggletag0: W + F1
+Echinus*toggletag1: W + F2
+Echinus*toggletag2: W + F3
+Echinus*toggletag3: W + F4
+Echinus*toggletag4: W + F5
+Echinus*toggletag5: W + F6
+
+Echinus*toggleview0: CW + F1
+Echinus*toggleview1: CW + F2
+Echinus*toggleview2: CW + F3
+Echinus*toggleview3: CW + F4
+Echinus*toggleview4: CW + F5
+Echinus*toggleview5: CW + F6
+
+!Echinus*focusview4: A + s
+! layout ---------------------------------------------------------------
+Echinus*setlayoutm: A + m
+Echinus*setlayoutf: A + f
+Echinus*setlayouti: A + i
+Echinus*setlayoutt: A + t
+Echinus*setlayoutb: A + s
+! move & resize --------------------------------------------------------
+!Echinus*moveright: A + d = 5
+!Echinus*moveleft: A + a = -5
+!Echinus*moveup: A + w = 0 -5
+!Echinus*movedown: A + s = 0 5
+!Echinus*resizedecx: AS + a = 0 0 -5 0
+!Echinus*resizedecy: AS + s = 0 0 0 -5
+!Echinus*resizeincx: AS + d = 0 0 5 0
+!Echinus*resizeincy: AS + w = 0 0 0 5
+! shortcuts ------------------------------------------------------------
+Echinus*spawn0: W + Return = urxvtc
+Echinus*spawn1: A + r = urxvtc -T ranger -e ranger
+Echinus*spawn2: AS + r = rox
+Echinus*spawn3: A + w = luakit http://arpinux.org/livarp_start
+Echinus*spawn4: AS + w = firefox http://arpinux.org/livarp_start
+Echinus*spawn5: A + e = urxvtc -T editor -e vim
+Echinus*spawn6: AS + e = geany
+Echinus*spawn7: A + x = urxvtc -e weechat-curses
+Echinus*spawn8: A + z = urxvtc -T player -e mocp
+Echinus*spawn9: A + v = urxvtc -T sound -e alsamixer
+Echinus*spawn10: A + d = dmenu-bind.sh
+Echinus*spawn11: CAS + q = dmenu-quit.sh
+! master zone ----------------------------------------------------------
+Echinus*decmwfact: A + h = -0.05
+Echinus*incmwfact: A + l = +0.05
+Echinus*decnmaster: AS + j = -1
+Echinus*incnmaster: AS + k = +1
+! command --------------------------------------------------------------
+Echinus*command: compiz-deskmenu
+! rules : class.title tag isfloating hastitle --------------------------
+Echinus*rule0: Firefox.* NULL 0 1
+Echinus*rule1: volume.* NULL 1 0
+Echinus*rule2: xv.* NULL 1 0
+Echinus*rule3: File-roller.* NULL 1 0
+Echinus*rule4: Gimp.* NULL 1 1
+Echinus*rule5: xosview.* NULL 1 0
+Echinus*rule6: luakit.* NULL 0 1
