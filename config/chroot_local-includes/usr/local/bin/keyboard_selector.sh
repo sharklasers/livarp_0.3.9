@@ -3,7 +3,7 @@
 # launch it from ~/.xinitrc
 ACTION=`zenity --width=0 --height=176 --list\
             --title "SelectKbd" --text "select your keyboard"\
-            --column "language"\
+            --column "layout"\
             "fr"\
             "gb"\
             "us"\

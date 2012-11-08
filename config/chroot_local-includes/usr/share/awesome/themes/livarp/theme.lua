@@ -5,12 +5,18 @@
 
 -- Principal -----------------------------------------------------------
 theme = {}
---theme.wallpaper_cmd = { "nitrogen --restore" } -- uncomment if you use nitrogen
-theme.wallpaper_cmd = { "feh --bg-fill /usr/share/backgrounds/livarp_0.3.9_awesome.png" }
+--theme.wallpaper_cmd = { "nitrogen --restore" }
+theme.wallpaper_cmd = { "feh --bg-scale ".. os.getenv("HOME") .."/.config/awesome/current_wallpaper" }
+
+--only for my xephyr test
+--theme.wallpaper_cmd = { "feh --bg-scale /home/aphelion/tmp/testxephyr/current_wallpaper" }
 ------------------------------------------------------------------------
 
 -- Name ----------------------------------------------------------------
 theme.path = os.getenv("HOME").."/.config/awesome/themes/livarp"
+
+--only for my xephyr test
+--theme.path = "/home/aphelion/tmp/testxephyr/themes/livarp"
 ------------------------------------------------------------------------
 
 -- Police --------------------------------------------------------------
@@ -25,6 +31,32 @@ theme.bg_normal = "#222222"
 theme.bg_focus  = "#76A3B4"
 theme.bg_urgent = "#FFA000" -- orange
 ------------------------------------------------------------------------
+
+-- {{{ Font colors for naughty popups
+-- colors
+green="#7fb219"
+cyan="#7f4de6"
+red="#e04613"                             
+lblue="#6c9eab"                        
+dblue="#00ccff"
+black="#000000"
+lgrey="#d2d2d2"
+dgrey="#333333"
+white="#ffffff"
+
+alpha="dd"
+
+theme.notify_font= "DroidSansMono 7"
+theme.notify_font_color_1 = white
+theme.notify_font_color_2 = lgrey
+theme.notify_font_color_3 = red
+theme.notify_font_color_4 = white
+theme.notify_fg = theme.fg_focus
+theme.notify_bg = theme.bg_focus
+theme.notify_border = theme.border_focus
+-- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
+theme.tooltip_font= "DroidSansMono 7"
+-- }}}
 
 -- Bordures ------------------------------------------------------------
 theme.border_width  = "1"
@@ -87,6 +119,7 @@ theme.widget_mem    = theme.path.."/icons/mem.png"
 theme.widget_net    = theme.path.."/icons/down.png"
 theme.widget_bat    = theme.path.."/icons/bat.png"
 theme.widget_cal    = theme.path.."/icons/cal.png"
+theme.widget_info   = theme.path.."/icons/info.png"
 ------------------------------------------------------------------------
 
 return theme

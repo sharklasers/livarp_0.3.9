@@ -61,10 +61,10 @@ if [ -n "${ACTION}" ]; then
             session_selector.sh
             ;;
         reboot)
-            dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
+            sudo shutdown -r now
             ;;
         halt)
-            dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
+            sudo shutdown -h now
             ;;
     esac
 fi

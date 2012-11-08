@@ -1,0 +1,40 @@
+##############################################
+#  Settings
+##############################################
+# this conky is piped to wmfs statusbar 
+# and use "sequences" format
+# available sequences:
+# texte:   ^s[pos;color;text]
+# box:     ^R[pos;dim;color]
+# image:   ^i[pos;dim;imgpath]
+# progbar: ^p[pos;dim;bord;val;valmax;bgcolor;fgcolor]
+# posbar:  ^P[pos;dim;curser;val;valmax;bgcolor;fgcolor]
+# graph:   ^[pos;dim;val;valmax;bgcolor;fgcolor;name]
+###############################################
+background no
+out_to_x no
+out_to_console yes
+update_interval 2
+total_run_times 0
+uppercase no
+short_units yes
+use_spacer none
+if_up_strictness address
+##############################################
+#  Output
+##############################################
+TEXT
+^s[right;\#6DDD00; :: ]\
+^s[right;\#AABBAA;cpu:](1;spawn;urxvtc -e htop) ^s[right;\#E07C00; ${cpu}% ]\
+${if_match ${cpu} < 80 }^g[right;80;8;${cpu};100;\#222222;\#7D7D7D;ckycpu] ${else}^g[right;80;8;${cpu};100;\#222222;\#E07C00;ckycpu] ${endif}\
+^s[right;\#E07C00; ${acpitemp}°C]\
+^s[right;\#6DDD00; :: ]\
+^s[right;\#AABBAA;ram:](1;spawn;urxvtc -e htop) ^s[right;\#43E000; $memperc%] ^s[right;\#AABBAA; $mem]\
+^s[right;\#6DDD00; :: ]\
+^s[right;\#AABBAA;hdd:](1;spawn;urxvtc -e ncdu) ^s[right;\#008BE0; ${fs_used_perc /}% ] ^p[right;40;8;1;${fs_used_perc /};100;\#7D7D7D;\#222222]\
+^s[right;\#6DDD00; :: ]\
+^s[right;\#AABBAA;vol:](1;spawn;urxvtc -T sound -e alsamixer) \
+^p[right;40;8;1;${exec amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | cut -d% -f1};100;\#63b8ff;\#222222]\
+(4;spawn;amixer set Master 2dB+)(5;spawn;amixer set Master 2dB-)\
+^s[right;\#6DDD00; :: ]\
+^s[right;\#AABBAA;${time %a %d/%m %I:%M %P}] ^s[right;\#6DDD00; :: ]

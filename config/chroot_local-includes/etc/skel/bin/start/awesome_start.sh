@@ -23,7 +23,7 @@ fi
 #xcompmgr -cCfF -I20 -O10 -D1 -t-5 -l-5 -r4.2 -o.82
 
 ## setup auto-mounting -------------------------------------------------
-sleep 10 && udisks-glue --session &
+sleep 10 && udisks-glue --config .udisk-glue-awesome.conf --session &
 
 ## set awesome wallpaper -----------------------------------------------
 #nitrogen --restore ## uncomment to display our favorite wallpaper

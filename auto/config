@@ -29,7 +29,7 @@
         libnotify-bin libconfuse0 lua5.1 liblua5.1-0-dev liblua5.1-filesystem0 tk8.4 python-xdg \
         suckless-tools ccze acpi laptop-detect python-lxml pyrenamer bc lm-sensors \
         build-essential git-core libimlib2-dev libxinerama-dev libx11-dev libwebkit-dev \
-        debian-keyring gnome-keyring libpam-gnome-keyring most curl" \
+        debian-keyring gnome-keyring libpam-gnome-keyring most curl apt-show-versions" \
         --debian-installer live \
         --debian-installer-gui true \
         --syslinux-splash "/home/arp/arpinux_git/livarp_0.3.9/splash.png" \
