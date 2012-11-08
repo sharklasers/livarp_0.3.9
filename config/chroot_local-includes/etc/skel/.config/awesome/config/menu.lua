@@ -3,136 +3,136 @@
 
 -- Graph submenu -------------------------------------------------------
 capture = {
-{"Maintenant", "scrot '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"},
-{"Dans 5s", "scrot -d5 '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"},
-{"Dans 10s", "scrot -d10 '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"},
-{"Selection", "scrot -s '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"}
+{"Now", "scrot '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"},
+{"In 5s", "scrot -d5 '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"},
+{"In 10s", "scrot -d10 '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"},
+{"In a Zone", "scrot -s '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"}
  }
 ------------------------------------------------------------------------
 
 -- Preferences submenu -------------------------------------------------
 awesomemenu = {
-    { "Themes", mythememenu },
-    { "Wallpapers", mywallmenu },
+    { "themes", mythememenu },
+    { "wallpapers", mywallmenu },
     { "-----------"},
-    { "Editer autorun.lua", editor_cmd .." ".. config_dir .."/config/autorun.lua"},
-    { "Editer keys.lua", editor_cmd .." ".. config_dir .."/config/keys.lua"},
-    { "Editer menu.lua", editor_cmd .." ".. config_dir .."/config/menu.lua"},
-    { "Editer mouse.lua", editor_cmd .." ".. config_dir .."/config/mouse.lua"},
-    { "Editer rules.lua", editor_cmd .." ".. config_dir .."/config/rules.lua"},
-    { "Editer signals.lua", editor_cmd .." ".. config_dir .."/config/signals.lua"},
-    { "Editer tags.lua", editor_cmd .." ".. config_dir .."/config/tags.lua"},
-    { "Editer widgets.lua", editor_cmd .." ".. config_dir .."/config/widgets.lua"},
+    { "edit autorun.lua", editor_cmd .." ".. config_dir .."/config/autorun.lua"},
+    { "edit keys.lua", editor_cmd .." ".. config_dir .."/config/keys.lua"},
+    { "edit menu.lua", editor_cmd .." ".. config_dir .."/config/menu.lua"},
+    { "edit mouse.lua", editor_cmd .." ".. config_dir .."/config/mouse.lua"},
+    { "edit rules.lua", editor_cmd .." ".. config_dir .."/config/rules.lua"},
+    { "edit signals.lua", editor_cmd .." ".. config_dir .."/config/signals.lua"},
+    { "edit tags.lua", editor_cmd .." ".. config_dir .."/config/tags.lua"},
+    { "edit widgets.lua", editor_cmd .." ".. config_dir .."/config/widgets.lua"},
     { "-----------"},
-    { "éditer awesome_start", editor_cmd .." bin/start/awesome_start.sh" },
+    { "edit awesome_start", editor_cmd .." bin/start/awesome_start.sh" },
     { "-----------"},
-    { "page de manuel", terminal .." -e man awesome" },
-    { "éditer .xinitrc", editor_cmd .." .xinitrc" },
+    { "man page", terminal .." -e man awesome" },
+    { "edit .xinitrc", editor_cmd .." .xinitrc" },
     { "-----------"},
-    { "relancer", awesome.restart },
-    { "déconnexion", awesome.quit },
+    { "reload", awesome.restart },
+    { "exit", awesome.quit },
 }
 
 conky = {
-    { "éditer .conkyrc", editor_cmd .." .conky/.conkyrc_awesome" },
-    { "page de manuel", terminal .." -e man conky" },
-    { "page de wiki", webcli .." http://arpinux.org/x/doku.php/start:conky" },
+    { "edit .conkyrc", editor_cmd .." .conky/.conkyrc_awesome" },
+    { "man page", terminal .." -e man conky" },
+    { "wiki page", webcli .." http://arpinux.org/x/doku.php/start:conky" },
 }
 composite = {
-    { "pas d'effet", "xcompmgr_livarp -s" },
-    { "effet léger", "xcompmgr_livarp -l" },
-    { "effet classique", "xcompmgr_livarp -m" },
-    { "effet complet", "xcompmgr_livarp -f" },
+    { "no effect", "xcompmgr_livarp -s" },
+    { "light effect", "xcompmgr_livarp -l" },
+    { "medium effect", "xcompmgr_livarp -m" },
+    { "full effect", "xcompmgr_livarp -f" },
 }
 ------------------------------------------------------------------------
 
 prefs = {
     { "awesome", awesomemenu },
     { "conky", conky },
-    { "affichage", "grandr" },
+    { "display", "grandr" },
     { "interface", "lxappearance" },
-    { "fond d'ecran", "nitrogen " },
-    { "page d'accueil web", editor_cmd.." .startpage/index.html" },
+    { "wallpaper", "nitrogen " },
+    { "web startpage", editor_cmd.." .startpage/index.html" },
     { "composite", composite},
 }
 accessoires = {
     { "terminal", "urxvtc" },
-    { "rechercher", "catfish" },
-    { "renommer", "pyrenamer" },
-    { "gestionnaire d'archive", "file-roller" },
-    { "éditeur de texte", "geany" },
-    { "gestion de fichiers", "rox-filer" },
-    { "gestion de fichiers (root)", "gksudo rox-filer" },
+    { "search util", "catfish" },
+    { "rename", "pyrenamer" },
+    { "file-roller", "file-roller" },
+    { "text editor", "geany" },
+    { "file-manager", "rox-filer" },
+    { "root file-manager", "gksudo rox-filer" },
 }
 multimedia = {
-   { "lecteur multimedia", "gnome-mplayer" },
-   { "lecteur musique (cli)", terminal.." -e mocp" },
-   { "graveur de cd/dvd", "brasero" },
-   { "contrôleur de volume", terminal .." -e alsamixer" },
+   { "multimedia player", "gnome-mplayer" },
+   { "music player (cli)", terminal.." -e mocp" },
+   { "cd/dvd burner", "brasero" },
+   { "control volume", terminal .." -e alsamixer" },
 }
 internet = {
-   { "navigateur luakit", "luakit" },
-   { "navigateur firefox", "firefox" },
-   { "client IRC weechat", terminal.." -e weechat-ncurses" },
-   { "client jabber mcabber", terminal.." -e mcabber" },
-   { "client mail claws-mail", "claws-mail" },
-   { "client FTP filezilla", "filezilla" },
-   { "client torrent transmission", "transmission" },
+   { "luakit browser", "luakit" },
+   { "firefox browser", "firefox" },
+   { "IRC client weechat", terminal.." -e weechat-ncurses" },
+   { "jabber client mcabber", terminal.." -e mcabber" },
+   { "mail cient claws-mail", "claws-mail" },
+   { "FTP client filezilla", "filezilla" },
+   { "torrent client transmission", "transmission" },
 }
 bureautique = {
-   { "éditeur de texte", "geany" },
-   { "traitement de texte", "abiword" },
-   { "tableur", "gnumeric" },
-   { "calculatrice", "xcalc" },
-   { "visionneur PDF", "evince" },
+   { "text editor", "geany" },
+   { "abiword", "abiword" },
+   { "gnumeric", "gnumeric" },
+   { "calculate", "xcalc" },
+   { "PDF viewer", "evince" },
 }
 graphismmenu = {
     { "the gimp", "gimp" },
-    { "visionneur d'images", "gpicview" },
-    { "choix de couleurs", "gcolor2" },
-    { "capture d'écran", capture },
+    { "image viewer", "gpicview" },
+    { "gcolor2", "gcolor2" },
+    { "screenshot", capture },
 }
 applications = {
     { "internet", internet },
     { "multimedia", multimedia },
-    { "graphisme", graphismmenu },
+    { "graphics", graphismmenu },
     { "bureautique", bureautique },
-    { "accessoires", accessoires },
+    { "accessories", accessoires },
 }
 systemmenu = {
-    { "gestionnaire de paquets", "gksudo synaptic" },
-    { "éditeur de partition", "gksudo gparted" },
-    { "applications par défaut", terminal.." -e sudo update-alternatives --all" },
-    { "utilisation du disque", "baobab" },
-    { "gestionnaire de services", "gksudo bum" },
-    { "terminal administrateur", terminal.." -e su" },
+    { "packages manager", "gksudo synaptic" },
+    { "partition editor", "gksudo gparted" },
+    { "default applications", terminal.." -e sudo update-alternatives --all" },
+    { "disks usage", "baobab" },
+    { "boot-up manager", "gksudo bum" },
+    { "root terminal", terminal.." -e su" },
     { "livarp-xs-maker", "/usr/local/bin/livarp-xs.sh" },
 }
 helpmenu = {
-    { "centre d'aide livarp", webcli.." /usr/share/livarp/help_center/index-fr.html" },
-    { "wiki livarp", webcli.." http://arpinux.org/x/doku.php/start:livarp:livarp_039" },
+    { "livarp-help-center", webcli.." /usr/share/livarp/help_center/index.html" },
+    { "livarp wiki", webcli.." http://arpinux.org/x/doku.php/start:livarp:livarp_039_gb" },
 }
 ------------------------------------------------------------------------
 
 -- Main Menu -----------------------------------------------------------
-mymainmenu = awful.menu({ items = { { "lancer", "dmenu_run -i -p 'exec :' -nb '" .. 
+mymainmenu = awful.menu({ items = { { "run", "dmenu_run -i -p 'exec :' -nb '" .. 
 										beautiful.bg_normal .. "' -nf '" .. beautiful.fg_normal .. 
 										"' -sb '" .. beautiful.bg_focus .. 
 										"' -sf '" .. beautiful.fg_focus .. "'" },
 									{ "--------" },
 									{ "terminal", terminal },
-									{ "navigateur internet", "luakit" },
-									{ "navigateurs de fichiers", manager },
-                                    { "éditeur de texte", "geany" },
-                                    { "lecteur multimedia", "gnome-mplayer" },
+									{ "web browser", "luakit" },
+									{ "file-manager", manager },
+                                    { "text editor", "geany" },
+                                    { "media player", "gnome-mplayer" },
                                     { "--------" },
                                     { "applications", applications },
-									{ "préférences", prefs },
-                                    { "système", systemmenu },
-                                    { "aide", helpmenu },
+									{ "preferences", prefs },
+                                    { "system", systemmenu },
+                                    { "help", helpmenu },
                                     { "--------" },
-                                    { "verrouiller l'ecran", "xscreensaver-command --lock" },
-                                    { "quitter", "shutdown.sh" }
+                                    { "lock screen", "xscreensaver-command --lock" },
+                                    { "exit", "shutdown.sh" }
                                   }
                         })
 ------------------------------------------------------------------------
