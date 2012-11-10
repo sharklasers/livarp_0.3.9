@@ -44,7 +44,8 @@ shifty.config.defaults = {
     guess_name = true,
     guess_position = true,
 }
-
+--focus on client hovering
 shifty.config.sloppy = true
+--titlebar only on floating client
 shifty.config.float_bars = false
 --shifty.config.honorsizehints = false

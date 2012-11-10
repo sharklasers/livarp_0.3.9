@@ -122,13 +122,13 @@ local function get_help( my_title_color)
   str=colorize(str,"Système", my_title_color)    
   str=colorize(str,"Clients", my_title_color)
   str=colorize(str,"Widgets", my_title_color)
-  str=colorize(str,"Général", "orange")
+  str=colorize(str,"General", "orange")
   str=colorize(str,"Calendrier", "orange")
   str=colorize(str,"Volume", "orange")  
   str=colorize(str,"Cpu", "orange")
   str=colorize(str,"Apt Update", "orange")
-  str=colorize(str,"Musique", "orange")  
-  str=colorize(str,"Disques", "orange")  
+  str=colorize(str,"Music", "orange")  
+  str=colorize(str,"Disks", "orange")  
   return str
 end
 

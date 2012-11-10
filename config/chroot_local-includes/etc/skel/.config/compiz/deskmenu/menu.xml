@@ -304,13 +304,13 @@
     </item>
     <item type="launcher">
       <name>wiki livarp</name>
-      <command>firefox http://arpinux.org/x/doku.php/start:livarp:livarp_039_gb</command>
+      <command>luakit http://arpinux.org/x/doku.php/start:livarp:livarp_039_gb</command>
       <icon>help</icon>
     </item>
     <item type="launcher">
       <name>wiki arpinux.org</name>
       <icon>help</icon>
-      <command>firefox http://arpinux.org/x</command>
+      <command>luakit http://arpinux.org/x</command>
     </item>
   </menu>
   <separator/>

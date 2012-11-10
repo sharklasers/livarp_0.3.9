@@ -36,7 +36,8 @@ feh --no-xinerama --bg-fill /usr/share/backgrounds/livarp_0.3.9_wmfs.png
 nm-applet &
 
 ## set statusbar -------------------------------------------------------
-conkyd -q -c ~/.conky/.conkyrc_wmfs | while true; read line; do wmfs -c status "bottombar $line"; done &
+conkyd -c ~/.conky/.conkyrc_wmfs_taginfos | while true; read line; do wmfs -c status "bottombar $line"; done &
+conkyd -c ~/.conky/.conkyrc_wmfs_launchers | while true; read line; do wmfs -c status "topbar $line"; done &
 
 ## dock minimal --------------------------------------------------------
 #sleep 10s && ~/bin/tabdock.sh &

@@ -1,0 +1,74 @@
+########################################################################
+# wmfs2 conkyrc                                                        #
+# launchers - systray                                                  #
+# livarp_0.3.9 arpinux@2012                                            #
+# http://arpinux.org/livarp                                            #
+########################################################################
+# wmfs bottombar colors                                                #
+########################################################################
+# 6DDD00 green (separators)
+# 43E000 light green
+# 222222 dark grey
+# 7D7D7D grey
+# B7B7B7 clear grey (default)
+# E07C00 orange
+# E00B00 red (alarm)
+# 008BE0 blue (hdd)
+# 63b8ff clear blue (vol)
+########################################################################
+# settings                                                             #
+########################################################################
+background no
+out_to_x no
+out_to_console yes
+update_interval 5
+total_run_times 0
+uppercase no
+short_units yes
+use_spacer none
+if_up_strictness address
+text_buffer_size 4096
+########################################################################
+# output                                                               #
+########################################################################
+TEXT
+# menu -----------------------------------------------------------------
+^s[8;9;\#6DDD00;wmfs](1;spawn;compiz-deskmenu)(3;spawn;compiz-deskmenu-editor) \
+# launchers
+^s[70;9;\#B7B7B7;term](1;spawn;urxvtc) \
+^s[132;9;\#B7B7B7;filer](1;spawn;rox-filer) \
+^s[184;9;\#B7B7B7;ranger](1;spawn;urxvtc -e ranger) \
+^s[247;9;\#B7B7B7;luakit](1;spawn;luakit) \
+^s[304;9;\#B7B7B7;firefox](1;spawn;firefox) \
+^s[367;9;\#B7B7B7;editor](1;spawn;geany) \
+^s[433;9;\#B7B7B7;vim](1;spawn;urxvtc -T editor -e vim) \
+^s[487;9;\#B7B7B7;tchat](1;spawn;urxvtc -e weechat-curses) \
+^s[548;9;\#B7B7B7;music](1;spawn;urxvtc -e mocp) \
+# infos section - with status_surface ----------------------------------
+^s[610;9;\#B7B7B7;infos](1;status_surface;10,25,645,300,\#222222 \
+^R[0;0;645;1;\#6DDD00]^R[0;299;645;1;\#6DDD00]^R[0;0;1;300;\#6DDD00]^R[644;0;1;300;\#6DDD00]\
+^R[2;2;641;2;\#B7B7B7]^R[2;296;641;2;\#B7B7B7]^R[2;2;2;296;\#B7B7B7]^R[641;2;2;296;\#B7B7B7]\
+^s[10;14;\#B7B7B7;cpu usage: ${cpu}%] ^s[120;14;\#B7B7B7;load: ${loadavg}]\
+^s[10;24;\#B7B7B7;${top cpu 1}%] ^s[70;24;\#B7B7B7;${top name 1}]\
+^s[10;34;\#B7B7B7;${top cpu 2}%] ^s[70;34;\#B7B7B7;${top name 2}]\
+^s[10;44;\#B7B7B7;${top cpu 3}%] ^s[70;44;\#B7B7B7;${top name 3}]\
+^s[10;54;\#B7B7B7;${top cpu 4}%] ^s[70;54;\#B7B7B7;${top name 4}]) \
+# actions --------------------------------------------------------------
+^s[670;9;\#6DDD00;help](1;spawn;luakit ~/.help_center/fr/sessions/wmfs.html) \
+^s[726;9;\#63B8FF;config](1;spawn;geany .config/wmfs/wmfs*)(3;spawn;geany .conky/.conkyrc_wmfs*) \
+^s[792;9;\#E00B00;exit](1;spawn;shutdown.sh) \
+# frames ---------------------------------------------------------------
+^R[0;0;45;1;\#6DDD00]^R[0;11;45;1;\#6DDD00]^R[0;0;1;12;\#6DDD00]^R[45;0;1;12;\#6DDD00] \
+^R[60;0;45;1;\#B7B7B7]^R[60;11;45;1;\#B7B7B7]^R[60;0;1;12;\#B7B7B7]^R[105;0;1;12;\#B7B7B7] \
+^R[120;0;45;1;\#B7B7B7]^R[120;11;45;1;\#B7B7B7]^R[120;0;1;12;\#B7B7B7]^R[165;0;1;12;\#B7B7B7] \
+^R[180;0;45;1;\#B7B7B7]^R[180;11;45;1;\#B7B7B7]^R[180;0;1;12;\#B7B7B7]^R[225;0;1;12;\#B7B7B7] \
+^R[240;0;45;1;\#B7B7B7]^R[240;11;45;1;\#B7B7B7]^R[240;0;1;12;\#B7B7B7]^R[285;0;1;12;\#B7B7B7] \
+^R[300;0;45;1;\#B7B7B7]^R[300;11;45;1;\#B7B7B7]^R[300;0;1;12;\#B7B7B7]^R[345;0;1;12;\#B7B7B7] \
+^R[360;0;45;1;\#B7B7B7]^R[360;11;45;1;\#B7B7B7]^R[360;0;1;12;\#B7B7B7]^R[405;0;1;12;\#B7B7B7] \
+^R[420;0;45;1;\#B7B7B7]^R[420;11;45;1;\#B7B7B7]^R[420;0;1;12;\#B7B7B7]^R[465;0;1;12;\#B7B7B7] \
+^R[480;0;45;1;\#B7B7B7]^R[480;11;45;1;\#B7B7B7]^R[480;0;1;12;\#B7B7B7]^R[525;0;1;12;\#B7B7B7] \
+^R[540;0;45;1;\#B7B7B7]^R[540;11;45;1;\#B7B7B7]^R[540;0;1;12;\#B7B7B7]^R[585;0;1;12;\#B7B7B7] \
+^R[600;0;45;1;\#B7B7B7]^R[600;11;45;1;\#B7B7B7]^R[600;0;1;12;\#B7B7B7]^R[645;0;1;12;\#B7B7B7] \
+^R[660;0;45;1;\#B7B7B7]^R[660;11;45;1;\#B7B7B7]^R[660;0;1;12;\#B7B7B7]^R[705;0;1;12;\#B7B7B7] \
+^R[720;0;45;1;\#B7B7B7]^R[720;11;45;1;\#B7B7B7]^R[720;0;1;12;\#B7B7B7]^R[765;0;1;12;\#B7B7B7] \
+^R[780;0;45;1;\#E00B00]^R[780;11;45;1;\#E00B00]^R[780;0;1;12;\#E00B00]^R[825;0;1;12;\#E00B00]

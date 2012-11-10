@@ -32,6 +32,10 @@ xset fp rehash
 ## launch terminal deamon ##
 urxvtd -q -f -o
 
+## launch screensaver ##
+xscreensaver-command -exit
+xscreensaver &
+
 ## set cursor ##
 xsetroot -cursor_name left_ptr
 

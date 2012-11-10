@@ -36,11 +36,11 @@
         client_border_width         = 1
     [/theme]
     [theme]
-        # default arp theme
+        # default livarp_0.3.9 theme
         name                        = "livarp"
         font                        = "snap"
         # Bars
-        bars_width                  = 12
+        bars_width                  = 14
         bars_fg                     = "#7D7D7D"
         bars_bg                     = "#222222"
         # Element tags
@@ -50,24 +50,24 @@
         tags_sel_fg                 = "#222222"
         tags_sel_bg                 = "#6DDD00"
         #tags_sel_statusline         = ""
-        tags_occupied_fg            = "#7D7D7D"
+        tags_occupied_fg            = "#B7B7B7"
         tags_occupied_bg            = "#1A1A1A"
-        tags_occupied_statusline    = "\R[0;11;20;1;#6DDD00]"
-        tags_urgent_fg              = "#7D7D7D"
+        tags_occupied_statusline    = "\R[0;13;20;1;#6DDD00]"
+        tags_urgent_fg              = "#B7B7B7"
         tags_urgent_bg              = "#1A1A1A"
-        tags_urgent_statusline      = "\R[0;11;20;1;#CC0000]\R[0;0;20;1;#CC0000]"
+        tags_urgent_statusline      = "\R[0;13;20;1;#E00B00]\R[0;0;20;1;#E00B00]"
         tags_border_color           = "#222222"
         tags_border_width           = 0
         # Frame / Client
         client_normal_fg            = "#4E4E4E"
         client_normal_bg            = "#222222"
         #client_normal_statusline    = ""
-        client_sel_fg               = "#7D7D7D"
+        client_sel_fg               = "#6DDD00"
         client_sel_bg               = "#222222"
-        client_sel_statusline       = "\s[left;#7EABFF; X](1;client_close) \s[left;#7EABFF; ~](1;client_toggle_free) \s[left;#7EABFF; <](1;tag_move_client_prev)(2;tag_move_client_prev)(2;tag_prev) \s[left;#7EABFF; >](1;tag_move_client_next)(2;tag_move_client_next)(2;tag_next) \s[right;#7EABFF;on air ]"
-        client_free_statusline       = "\s[left;#7EABFF; X](1;client_close) \s[left;#7EABFF; #](1;client_toggle_free) \s[left;#7EABFF; <](1;tag_move_client_prev)(2;tag_move_client_prev)(2;tag_prev) \s[left;#7EABFF; >](1;tag_move_client_next)(2;tag_move_client_next)(2;tag_next) \s[right;#7EABFF;free ]"
-        frame_bg                    = "#C7C7C7"
-        client_titlebar_width       = 12
+        client_sel_statusline       = "\s[left;#E00B00; cls ](1;client_close) \s[left;#63b8ff; ~](1;client_toggle_free) \s[right;#B7B7B7; <](1;tag_move_client_prev)(2;tag_move_client_prev)(2;tag_prev) \s[right;#B7B7B7; > ](1;tag_move_client_next)(2;tag_move_client_next)(2;tag_next)"
+        client_free_statusline       = "\s[left;#E00B00; cls ](1;client_close) \s[left;#63b8ff; #](1;client_toggle_free) \s[right;#B7B7B7; <](1;tag_move_client_prev)(2;tag_move_client_prev)(2;tag_prev) \s[right;#B7B7B7; > ](1;tag_move_client_next)(2;tag_move_client_next)(2;tag_next)"
+        frame_bg                    = "#7D7D7D"
+        client_titlebar_width       = 20
         client_border_width         = 1
     [/theme]
     [theme]

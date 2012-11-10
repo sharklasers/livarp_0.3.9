@@ -3,10 +3,10 @@
 
 -- Graph submenu -------------------------------------------------------
 capture = {
-{"Now", "scrot '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"},
-{"In 5s", "scrot -d5 '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"},
-{"In 10s", "scrot -d10 '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"},
-{"In a Zone", "scrot -s '%Y-%m-%d--%s_$wx$h_scrot.png' & gpicview '$f'"}
+{"now", "scrot"},
+{"in 5s", "scrot -d5"},
+{"in 10s", "scrot -d10"},
+{"in a Zone", "scrot -s"}
  }
 ------------------------------------------------------------------------
 

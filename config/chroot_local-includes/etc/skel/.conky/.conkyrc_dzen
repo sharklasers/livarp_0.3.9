@@ -26,38 +26,40 @@ TEXT
 ^fg(\#ff4500)^i(/usr/share/dzicons/cpu.xbm) ^fg(\#ccc)${cpu}%  \
 ^fg(\#00bfff)^i(/usr/share/dzicons/mem.xbm) ^fg(\#ccc)$memperc%  \
 ^fg(\#ffd700)^i(/usr/share/dzicons/home.xbm) ^fg(\#ccc)${fs_used_perc /}%   \
-^fg()${if_match ${battery_percent BAT0} >=26}^fg(\#7cfc00)^i(/usr/share/dzicons/bat_full_01.xbm)${endif}\
-${if_match ${battery_percent BAT0} <=25}^fg(\#CC0000)^i(/usr/share/dzicons/bat_low_01.xbm)^fg()${endif} ^fg(\#ccc)${battery_percent}%   \
+^fg()${if_existing /sys/class/power_supply/BAT0}${if_match ${battery_percent BAT0} >=26}^fg(\#7cfc00)^i(/usr/share/dzicons/bat_full_01.xbm)${else}\
+^fg(\#CC0000)^i(/usr/share/dzicons/bat_low_01.xbm)^fg()${endif} ^fg(\#ccc)${battery_percent BAT0}%   \
+${else}${if_existing /sys/class/power_supply/BAT1}${if_match ${battery_percent BAT1} >=26}^fg(\#7cfc00)^i(/usr/share/dzicons/bat_full_01.xbm)${else}\
+^fg(\#CC0000)^i(/usr/share/dzicons/bat_low_01.xbm)^fg()${endif} ^fg(\#ccc)${battery_percent BAT1}%${endif}${endif}   \
 ^fg()${if_up eth0}^i(/usr/share/dzicons/net_wired.xbm) \
 ^fg(\#00cd00)^i(/usr/share/dzicons/net_up_02.xbm) ^fg(\#ccc)${upspeedf eth0} \
 ^fg(\#ffa500)^i(/usr/share/dzicons/net_down_02.xbm) ^fg(\#ccc)${downspeedf eth0} \
 ^fg()${else}${if_up eth1}^i(/usr/share/dzicons/net_wired.xbm) \
 ^fg(\#00cd00)^i(/usr/share/dzicons/net_up_02.xbm) ^fg(\#ccc)${upspeedf eth1} \
 ^fg(\#ffa500)^i(/usr/share/dzicons/net_down_02.xbm) ^fg(\#ccc)${downspeedf eth1} \
-^fg()${else}${if_up eth3}^i(/usr/share/dzicons/wifi_02.xbm) \
-^fg(\#00cd00)^i(/usr/share/dzicons/net_up_02.xbm) ^fg(\#ccc)${upspeedf eth3} \
-^fg(\#ffa500)^i(/usr/share/dzicons/net_down_02.xbm) ^fg(\#ccc)${downspeedf eth3} \
+^fg()${else}${if_up wlan0}^i(/usr/share/dzicons/wifi_02.xbm) \
+^fg(\#00cd00)^i(/usr/share/dzicons/net_up_02.xbm) ^fg(\#ccc)${upspeedf wlan0} \
+^fg(\#ffa500)^i(/usr/share/dzicons/net_down_02.xbm) ^fg(\#ccc)${downspeedf wlan0} \
 ^fg()${else}${endif}${endif}${endif}   \
 ^i(/usr/share/dzicons/cal.xbm) ^fg()${time %d/%m}^fg(\#ccc) ^i(/usr/share/dzicons/clock.xbm) ${time %I:%M}  
- ^fg(\#00cd00)--------------------------------------------------^fg()
- ^fg(\#00cd00)---- livarp_0.3.9 -- dzen2 & conky info tools ----^fg()
- ^fg(\#00cd00)--------------------------------------------------^fg()
+ ^fg(\#00cd00)------------------------------------------------------------^fg()
+ ^fg(\#00cd00)---- livarp_0.3.9 -- informations système dzen2 & conky ----^fg()
+ ^fg(\#00cd00)------------------------------------------------------------^fg()
        you are logged on : ^fg(\#ccc)${nodename}^fg() since ^fg(\#ccc)${uptime}^fg()
-       system            : ^fg(\#ccc)${sysname} ${kernel}^fg()
+       systeme           : ^fg(\#ccc)${sysname} ${kernel}^fg()
  ^fg(\#00cd00)----^fg()
        ^fg(\#ccc)cpu : load(1,5,15min): ^fg(\#ff4500)${loadavg}^fg(\#ccc)   freq: ^fg(\#ff4500)${freq}Mhz^fg()
-       ^fg()cpu usage : ^fg(\#ccc)1:${top name 1} ${top cpu 1}%^fg()       5:${top name 1} ${top cpu 5}%^fg()
-                   ^fg(\#ccc)2:${top name 2} ${top cpu 2}%^fg()       6:${top name 1} ${top cpu 6}%^fg()
-                   ^fg(\#ccc)3:${top name 3} ${top cpu 3}%^fg()       7:${top name 1} ${top cpu 7}%^fg()
-                   ^fg(\#ccc)4:${top name 4} ${top cpu 4}%^fg()       8:${top name 1} ${top cpu 8}%^fg()
+       ^fg()utilisation : ^fg(\#ccc)1:${top name 1} ${top cpu 1}%^fg()       5:${top name 1} ${top cpu 5}%^fg()
+                     ^fg(\#ccc)2:${top name 2} ${top cpu 2}%^fg()       6:${top name 1} ${top cpu 6}%^fg()
+                     ^fg(\#ccc)3:${top name 3} ${top cpu 3}%^fg()       7:${top name 1} ${top cpu 7}%^fg()
+                     ^fg(\#ccc)4:${top name 4} ${top cpu 4}%^fg()       8:${top name 1} ${top cpu 8}%^fg()
  ^fg(\#00cd00)----^fg()
        ^fg(\#ccc)mem : ^fg(\#00bfff)${mem}^fg()/${memeasyfree}^fg(\#ccc)   swap:${swap}^fg()/${swapmax}
-       ^fg()mem usage : ^fg(\#ccc)1:${top_mem name 1} ${top_mem mem 1}%^fg()       5:${top_mem name 1} ${top_mem mem 5}%^fg()
-                   ^fg(\#ccc)2:${top_mem name 2} ${top mem 2}%^fg()       6:${top_mem name 1} ${top_mem mem 6}%^fg()
-                   ^fg(\#ccc)3:${top_mem name 3} ${top mem 3}%^fg()       7:${top_mem name 1} ${top_mem mem 7}%^fg()
-                   ^fg(\#ccc)4:${top_mem name 4} ${top mem 4}%^fg()       8:${top_mem name 1} ${top_mem mem 8}%^fg()
+       ^fg()utilisation : ^fg(\#ccc)1:${top_mem name 1} ${top_mem mem 1}%^fg()       5:${top_mem name 1} ${top_mem mem 5}%^fg()
+                     ^fg(\#ccc)2:${top_mem name 2} ${top mem 2}%^fg()       6:${top_mem name 1} ${top_mem mem 6}%^fg()
+                     ^fg(\#ccc)3:${top_mem name 3} ${top mem 3}%^fg()       7:${top_mem name 1} ${top_mem mem 7}%^fg()
+                     ^fg(\#ccc)4:${top_mem name 4} ${top mem 4}%^fg()       8:${top_mem name 1} ${top_mem mem 8}%^fg()
  ^fg(\#00cd00)----^fg()
        ^fg(\#ccc)hdd : ^fg(\#ffd700)${fs_used /}^fg(\#ccc)/${fs_size /}      ^fg()i/o : ^fg(\#ccc)${diskio}^fg()
  ^fg(\#00cd00)----^fg()
-       left-clic to ^fg(\#ccc)collapse^fg() -- right-clic to ^fg(\#ccc)configure^fg() -- middle-clic to ^fg(\#ccc)reload
+       left-clic ^fg(\#ccc)collapse^fg() -- roght-clic ^fg(\#ccc)configure^fg() -- middle clic ^fg(\#ccc)reload
  ^fg(\#00cd00)----^fg()
