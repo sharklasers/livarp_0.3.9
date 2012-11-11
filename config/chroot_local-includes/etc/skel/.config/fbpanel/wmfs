@@ -387,7 +387,7 @@ Plugin {
                 item {
                     name = edit statusbar
                     icon = gtk-edit
-                    action = geany .conky/.conkyrc_wmfs
+                    action = geany .conky/.conkyrc_wmfs*
                 }
                 item {
                     name = edit themes

@@ -1,12 +1,12 @@
-# conky configuration <arpinux2012>
-# For help with conky, please see:
-# http://arpinux.org/x/doku.php/start:conky
-##############################################
-#  Settings
-##############################################
+########################################################################
+# vtwm conkyrc                                                         #
+# livarp_0.3.9 arpinux@2012                                            #
+# http://arpinux.org/livarp                                            #
+########################################################################
+#  Settings                                                            #
+########################################################################
 background yes
 use_xft yes
-#xftfont Aller Light:pixelsize=14
 xftfont Zero Twos:pixelsize=11
 xftalpha 0.8
 update_interval 1.0
@@ -42,11 +42,9 @@ short_units yes
 override_utf8_locale yes
 use_spacer left
 if_up_strictness address
-##############################################
-# lidia -- ©intelkuritsa.deviantart.com
-##############################################
-#  Output
-##############################################
+########################################################################
+#  Output                                                              #
+########################################################################
 TEXT
 ${alignc}${voffset 2}(V)TWM   LINUX
 ${voffset -5}$hr

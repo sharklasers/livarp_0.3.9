@@ -1,0 +1,77 @@
+# config/chroot - options for live-build(7), chroot stage
+
+# $LB_CHROOT_FILESYSTEM: set chroot filesystem
+# (Default: squashfs)
+LB_CHROOT_FILESYSTEM="squashfs"
+
+# $LB_UNION_FILESYSTEM: set union filesystem
+# (Default: aufs)
+LB_UNION_FILESYSTEM="aufs"
+
+# $LB_VIRTUAL_ROOT_SIZE: set virtual-hdd filesystem size
+# (Default: 10000)
+LB_VIRTUAL_ROOT_SIZE="10000"
+
+# $LB_EXPOSED_ROOT: expose root as read only
+# (Default: false)
+LB_EXPOSED_ROOT="false"
+
+# $LB_HOOKS: set hook commands
+# (Default: empty)
+LB_HOOKS=""
+
+# $LB_INTERACTIVE: set interactive build
+# (Default: false)
+LB_INTERACTIVE="false"
+
+# $LB_KEYRING_PACKAGES: set keyring packages
+# (Default: empty)
+LB_KEYRING_PACKAGES="debian-archive-keyring"
+
+# $LB_LANGUAGE: set language to use
+# (Default: empty)
+LB_LANGUAGE="en"
+
+# $LB_LINUX_FLAVOURS: set kernel flavour to use
+# (Default: autodetected)
+LB_LINUX_FLAVOURS="486 686"
+
+# $LB_LINUX_PACKAGES: set kernel packages to use
+# (Default: autodetected)
+LB_LINUX_PACKAGES="linux-image-2.6"
+
+# $LB_REPOSITORIES: enable available third-party repositories
+# (Default: empty)
+LB_REPOSITORIES=""
+
+# $LB_PACKAGES: set packages to install
+# (Default: empty)
+LB_PACKAGES="awesome awesome-extra vtwm fluxbox evilwm pekwm         compiz compiz-fusion-plugins-main compiz-fusion-plugins-extra compizconfig-settings-manager libdecoration0         rox-filer dmz-cursor-theme conky-all tint2         xcompmgr transset-df lxappearance grandr fbxkb xdotool         catfish baobab ncdu file-roller unrar        mcabber weechat transmission-gtk filezilla claws-mail claws-mail-multi-notifier claws-mail-newmail-plugin claws-mail-trayicon flashplugin-nonfree screen         brasero gnome-mplayer moc gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-bad gstreamer0.10-plugins-good gstreamer0.10-plugins-ugly         vim geany abiword gnumeric evince         xterm rxvt-unicode htop hardinfo xscreensaver         gpicview feh gimp nitrogen xfonts-terminus scrot gcolor2         gtk2-engines-pixbuf murrine-themes         gparted dosfstools ntfs-3g ntfsprogs gksu synaptic bum         zenity x11-apps usbutils xosview xcolorsel         firmware-linux firmware-linux-free firmware-linux-nonfree         w3m wpasupplicant wireless-tools network-manager-gnome network-manager-openvpn-gnome network-manager-vpnc-gnome         firmware-atheros firmware-ralink firmware-iwlwifi firmware-realtek firmware-b43-installer b43-fwcutter pppoeconf wvdial ndisgtk         libnotify-bin libconfuse0 lua5.1 liblua5.1-0-dev liblua5.1-filesystem0 tk8.4 python-xdg         suckless-tools ccze acpi laptop-detect python-lxml pyrenamer bc lm-sensors         build-essential git-core libimlib2-dev libxinerama-dev libx11-dev libwebkit-dev         debian-keyring gnome-keyring libpam-gnome-keyring most curl apt-show-versions"
+
+# $LB_PACKAGES_LISTS: set package list to install
+# (Default: standard-x11)
+LB_PACKAGES_LISTS="standard-x11"
+
+# $LB_TASKS: set tasks to install
+# (Default: empty)
+LB_TASKS=""
+
+# $LB_SECURITY: enable security updates
+# (Default: true)
+LB_SECURITY="true"
+
+# $LB_VOLATILE: enable volatile updates
+# (Default: true)
+LB_VOLATILE="true"
+
+# $LB_BACKPORTS: enable backports updates
+# (Default: true)
+LB_BACKPORTS="true"
+
+# $LB_SYMLINKS: enable symlink convertion
+# (Default: false)
+LB_SYMLINKS="false"
+
+# $LB_SYSVINIT: enable sysvinit
+# (Default: false)
+LB_SYSVINIT="false"

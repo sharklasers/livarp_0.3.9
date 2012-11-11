@@ -1,9 +1,10 @@
-# conky configuration <arpinux2012>
-# For help with conky, please see:
-# http://arpinux.org/x/doku.php/start:conky
-##############################################
-#  Settings
-##############################################
+########################################################################
+# dwm conkyrc                                                          #
+# livarp_0.3.9 arpinux@2012                                            #
+# http://arpinux.org/livarp                                            #
+########################################################################
+#  Settings                                                            #
+########################################################################
 background no
 out_to_x no
 out_to_console yes
@@ -13,8 +14,14 @@ uppercase no
 short_units yes
 use_spacer none
 if_up_strictness address
-##############################################
-#  Output
-##############################################
+########################################################################
+#  Output                                                              #
+########################################################################
 TEXT
-${if_existing /sys/class/power_supply/BAT0}${if_match ${battery_percent BAT0} <= 80 }BAT:${battery_short BAT0} ${battery_time BAT0}  ${else}${endif}${if_existing /sys/class/power_supply/BAT1}${if_match ${battery_percent BAT1} <= 80 }BAT:${battery_short BAT1} ${battery_time BAT1}  ${else}${endif}${endif}CPU:${cpu}%   RAM:${memperc}% $mem   HDD:${fs_used_perc /}%   ${time %d/%m %I:%M}
+${if_existing /sys/class/power_supply/BAT0}\
+${if_match ${battery_percent BAT0} <= 80 }\
+BAT:${battery_short BAT0} ${battery_time BAT0}  ${else}${endif}\
+${if_existing /sys/class/power_supply/BAT1}\
+${if_match ${battery_percent BAT1} <= 80 }\
+BAT:${battery_short BAT1} ${battery_time BAT1}${else}${endif}${endif}  
+\CPU:${cpu}%   RAM:${memperc}% $mem   HDD:${fs_used_perc /}%   ${time %d/%m %I:%M}

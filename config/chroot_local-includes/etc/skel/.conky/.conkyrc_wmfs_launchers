@@ -45,14 +45,7 @@ TEXT
 ^s[487;9;\#B7B7B7;tchat](1;spawn;urxvtc -e weechat-curses) \
 ^s[548;9;\#B7B7B7;music](1;spawn;urxvtc -e mocp) \
 # infos section - with status_surface ----------------------------------
-^s[610;9;\#B7B7B7;infos](1;status_surface;10,25,645,300,\#222222 \
-^R[0;0;645;1;\#6DDD00]^R[0;299;645;1;\#6DDD00]^R[0;0;1;300;\#6DDD00]^R[644;0;1;300;\#6DDD00]\
-^R[2;2;641;2;\#B7B7B7]^R[2;296;641;2;\#B7B7B7]^R[2;2;2;296;\#B7B7B7]^R[641;2;2;296;\#B7B7B7]\
-^s[10;14;\#B7B7B7;cpu usage: ${cpu}%] ^s[120;14;\#B7B7B7;load: ${loadavg}]\
-^s[10;24;\#B7B7B7;${top cpu 1}%] ^s[70;24;\#B7B7B7;${top name 1}]\
-^s[10;34;\#B7B7B7;${top cpu 2}%] ^s[70;34;\#B7B7B7;${top name 2}]\
-^s[10;44;\#B7B7B7;${top cpu 3}%] ^s[70;44;\#B7B7B7;${top name 3}]\
-^s[10;54;\#B7B7B7;${top cpu 4}%] ^s[70;54;\#B7B7B7;${top name 4}]) \
+^s[610;9;\#B7B7B7;infos](1;spawn;wmfs_infos.sh) \
 # actions --------------------------------------------------------------
 ^s[670;9;\#6DDD00;help](1;spawn;luakit ~/.help_center/fr/sessions/wmfs.html) \
 ^s[726;9;\#63B8FF;config](1;spawn;geany .config/wmfs/wmfs*)(3;spawn;geany .conky/.conkyrc_wmfs*) \

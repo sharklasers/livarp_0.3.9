@@ -163,9 +163,9 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     # uncomment to enable custom-prompt
-    #echo -en "\e[1;37m$DATE\e[m mem:\e[0;32m$MEMU\e[m/\e[0;32m$MEMT\e[m up:\e[1;33m$UPT\e[m /:\e[0;31m$ROOT\e[m\n"
+    #echo -en "┌─[\e[01;36m$DATE\e[m]─[\e[01;34m$UPT\e[m]─[\e[01;33m$(t | wc -l)tasks\e[m]\n└─[\e[1;32m$MEMU\e[m/\e[0;32m$MEMT\e[m]─[\e[01;31m$LOAD\e[m]\n"
     echo -en "\e[1;37mlivarp\e[m0.3.9\e[0;32mGNU/Linux\e[01;34mDebian\e[m\n"
-    PS1='${debian_chroot:+($debian_chroot)}┌─[\e[01;32m\u\e[0;32m@\h\e[m]─[\e[01;34m\w\e[m]\n└─|$ '
+    PS1='${debian_chroot:+($debian_chroot)}┌─[\e[01;32m\u\e[m@\e[0;36m\h\e[m]─[\e[01;34m\w\e[m]\n└─|$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi

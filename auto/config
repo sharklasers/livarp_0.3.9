@@ -3,7 +3,7 @@
         --distribution squeeze \
         --architecture i386 \
         --bootloader syslinux \
-        --binary-images iso \
+        --binary-images usb-hdd \
         --root-command sudo \
         --archive-areas "main contrib non-free" \
         --volatile true \

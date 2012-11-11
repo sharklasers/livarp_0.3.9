@@ -1,9 +1,10 @@
-# conky configuration <arpinux2012>
-# For help with conky, please see:
-# http://arpinux.org/x/doku.php/start:conky
-##############################################
-#  Settings
-##############################################
+########################################################################
+# pekwm conkyrc                                                        #
+# livarp_0.3.9 arpinux@2012                                            #
+# http://arpinux.org/livarp                                            #
+########################################################################
+#  Settings                                                            #
+########################################################################
 background no
 update_interval 1
 cpu_avg_samples 2

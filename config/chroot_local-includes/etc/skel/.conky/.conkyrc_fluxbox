@@ -1,9 +1,10 @@
-# conky configuration <arpinux2012>
-# For help with conky, please see:
-# http://arpinux.org/x/doku.php/start:conky
-##############################################
-#  Settings                                  
-##############################################
+########################################################################
+# fluxbox conkyrc                                                      #
+# livarp_0.3.9 arpinux@2012                                            #
+# http://arpinux.org/livarp                                            #
+########################################################################
+#  Settings                                                            #
+########################################################################
 background yes
 use_xft yes
 xftfont Terminus:pixelsize=12
@@ -46,9 +47,9 @@ short_units yes
 override_utf8_locale yes
 use_spacer none
 if_up_strictness address
-##############################################
-#  Output                                    #
-##############################################
+########################################################################
+#  Output                                                              #
+########################################################################
 TEXT
 ${voffset 5}${alignc}LIVARP_0.3.9
 ${hr 1}

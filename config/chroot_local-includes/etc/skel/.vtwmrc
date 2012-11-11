@@ -181,7 +181,7 @@ menu "config" {
     "VTWM config"   ("green":"gray25")f.title
     "Edit"          f.exec "urxvtc -e vim .vtwmrc &"
     "Restart"       f.restart
-    "Keys"          f.exec "urxvtc --geometry 60x45+50+50 -e vtwm_keys.sh &"
+    "Keys"          f.exec "urxvtc --geometry 60x30+50+50 -e vtwm_keys.sh &"
     "Conky"         f.exec "urxvtc -e vim .conky/.conkyrc_vtwm &"
     "Control"       f.menu "window"
     "Man"           f.exec "urxvtc -e man vtwm &"

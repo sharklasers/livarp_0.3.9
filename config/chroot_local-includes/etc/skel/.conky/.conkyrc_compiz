@@ -52,6 +52,8 @@ color2 AAAAAA
 color3 888888
 color4 666666
 
+if_up_strictness address
+
 lua_load ~/.conky/.conkyrc_compiz.lua
 lua_draw_hook_post main
 ########################################################################
@@ -80,24 +82,13 @@ ${font}${goto 50}${diskiograph 30,130 222222 666666}${voffset -10}
 ${goto 90}${color}used: ${fs_used /home} /home
 ${goto 90}${color}used: ${fs_used /} /
 
-${voffset 10}
-${goto 50}${font Aller:size=18,weight:bold}${color3}NET${alignr}${color2}${font Aller:size=8,weight:bold}${color1}${if_up eth1}eth ${addr eth1} ${else}${if_up wlan0}wifi ${addr wlan0}${endif}${endif}${font}
-${goto 50}${font Aller:size=8,weight:bold}${color}open ports: ${alignr}${color2}${tcp_portmon 1 65535 count}
-${goto 50}${font Aller:size=8,weight:bold}${color}${offset 10}IP${alignr}DPORT${font}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  0}${alignr 1}${tcp_portmon 1 65535 rport  0}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  1}${alignr 1}${tcp_portmon 1 65535 rport  1}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  2}${alignr 1}${tcp_portmon 1 65535 rport  2}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  3}${alignr 1}${tcp_portmon 1 65535 rport  3}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  4}${alignr 1}${tcp_portmon 1 65535 rport  4}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  5}${alignr 1}${tcp_portmon 1 65535 rport  5}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  6}${alignr 1}${tcp_portmon 1 65535 rport  6}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  7}${alignr 1}${tcp_portmon 1 65535 rport  7}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  8}${alignr 1}${tcp_portmon 1 65535 rport  8}
-${goto 50}${color1}${tcp_portmon 1 65535 rip  9}${alignr 1}${tcp_portmon 1 65535 rport  9}
-${goto 50}${color1}${tcp_portmon 1 65535 rip 10}${alignr 1}${tcp_portmon 1 65535 rport 10}
-${goto 50}${color1}${tcp_portmon 1 65535 rip 11}${alignr 1}${tcp_portmon 1 65535 rport 11}
-${goto 50}${color1}${tcp_portmon 1 65535 rip 12}${alignr 1}${tcp_portmon 1 65535 rport 12}
-${goto 50}${color1}${tcp_portmon 1 65535 rip 13}${alignr 1}${tcp_portmon 1 65535 rport 13}
-${goto 50}${color1}${tcp_portmon 1 65535 rip 14}${alignr 1}${tcp_portmon 1 65535 rport 14}
-
-
+${if_gw}${voffset 10}
+${goto 50}${font Aller:size=12,weight:bold}${color3}NET\
+${font Aller:size=8,weight:bold}${if_up eth0}${goto 90}${color1}wired ${color2}${alignr 5}${addr eth0}
+${goto 40}up: ${upspeed eth0}/s ${goto 140}${upspeedgraph eth0 10,60 222222 666666}
+${goto 40}dl: ${downspeed eth0}/s ${goto 140}${downspeedgraph eth0 10,60 222222 666666}${endif}
+${if_up wlan0}${goto 90}${color1}wifi ${color2}${alignr 5}${addr wlan0}
+${goto 40}up: ${upspeed wlan0}/s ${goto 140}${upspeedgraph wlan0 10,60 222222 666666}
+${goto 40}dl: ${downspeed wlan0}/s ${goto 140}${downspeedgraph wlan0 10,60 222222 666666}${endif}${font}
+${goto 50}${font Aller:size=8,weight:bold}${color}open ports: ${color2}${tcp_portmon 1 65535 count}
+${endif}

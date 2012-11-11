@@ -1,10 +1,10 @@
-# conky configuration <arpinux2012>
-# For help with conky, please see:
-# http://arpinux.org/x/doku.php/start:conky
-# Inspired by Arpinux, edited by Aphelion
-##############################################
-#  Settings
-##############################################
+########################################################################
+# awesome conkyrc                                                      #
+# livarp_0.3.9 arpinux@2012                                            #
+# http://arpinux.org/livarp                                            #
+########################################################################
+#  Settings                                                            #
+########################################################################
 background yes
 use_xft yes
 xftfont Monospace:pixelsize=10
@@ -46,12 +46,11 @@ short_units yes
 override_utf8_locale yes
 use_spacer none
 if_up_strictness address
-
-## box chars   
-# ├ └ │ ─ ┬
-##############################################
-#  Output
-##############################################
+## box chars ###########################################################
+# ─ │ ┌ ┐ └ ┘ ├ ┤ ┬ ┴ ┼                                                #
+########################################################################
+#  Output                                                              #
+########################################################################
 TEXT
 │
 │
