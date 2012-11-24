@@ -22,8 +22,8 @@ if_up_strictness address
 TEXT
 ${if_existing /sys/class/power_supply/BAT0}\
 ${if_match ${battery_percent BAT0} <= 80 }\
-BAT:${battery_short BAT0} ${battery_time BAT0}  ${else}${endif}\
+BAT:${battery_short BAT0} ${battery_time BAT0}  ${else}${endif}${endif}\
 ${if_existing /sys/class/power_supply/BAT1}\
 ${if_match ${battery_percent BAT1} <= 80 }\
-BAT:${battery_short BAT1} ${battery_time BAT1}${else}${endif}${endif}  
-\CPU:${cpu}%   RAM:${memperc}% $mem   HDD:${fs_used_perc /}%   ${time %d/%m %I:%M}
+BAT:${battery_short BAT1} ${battery_time BAT1}${else}${endif}${endif}  \
+CPU:${cpu}%   RAM:${memperc}% $mem   HDD:${fs_used_perc /}%   ${time %d/%m %I:%M}

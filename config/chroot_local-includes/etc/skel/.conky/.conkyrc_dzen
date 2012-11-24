@@ -32,8 +32,8 @@ TEXT
 ^fg(\#ffd700)^i(/usr/share/dzicons/home.xbm) ^fg(\#ccc)${fs_used_perc /}%   \
 ^fg()${if_existing /sys/class/power_supply/BAT0}${if_match ${battery_percent BAT0} >=26}^fg(\#7cfc00)^i(/usr/share/dzicons/bat_full_01.xbm)${else}\
 ^fg(\#CC0000)^i(/usr/share/dzicons/bat_low_01.xbm)^fg()${endif} ^fg(\#ccc)${battery_percent BAT0}%   \
-${else}${if_existing /sys/class/power_supply/BAT1}${if_match ${battery_percent BAT1} >=26}^fg(\#7cfc00)^i(/usr/share/dzicons/bat_full_01.xbm)${else}\
-^fg(\#CC0000)^i(/usr/share/dzicons/bat_low_01.xbm)^fg()${endif} ^fg(\#ccc)${battery_percent BAT1}%${endif}${endif}   \
+${else}${endif}${if_existing /sys/class/power_supply/BAT1}${if_match ${battery_percent BAT1} >=26}^fg(\#7cfc00)^i(/usr/share/dzicons/bat_full_01.xbm)${else}\
+^fg(\#CC0000)^i(/usr/share/dzicons/bat_low_01.xbm)^fg()${endif} ^fg(\#ccc)${battery_percent BAT1}%${else}${endif}   \
 ${if_gw}^fg()${if_up eth0}^i(/usr/share/dzicons/net_wired.xbm) \
 ^fg(\#00cd00)^i(/usr/share/dzicons/net_up_02.xbm) ^fg(\#ccc)${upspeedf eth0} \
 ^fg(\#ffa500)^i(/usr/share/dzicons/net_down_02.xbm) ^fg(\#ccc)${downspeedf eth0} \
