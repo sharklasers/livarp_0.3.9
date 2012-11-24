@@ -26,6 +26,7 @@ echo " remove fluxbox system files."
 sleep 2s
 apt-get autoremove -y --force-yes fluxbox
 rm -R -f /usr/share/fluxbox
+rm -R -f /etc/skel/.fluxbox
 echo ""
 echo " remove startup script, config and conky."
 sleep 2s

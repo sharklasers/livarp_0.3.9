@@ -30,6 +30,7 @@ rm /usr/local/bin/keybind_help.sh
 rm /usr/share/applications/wmfs.desktop
 rm /usr/share/man/man1/wmfs.1
 rm -R -f /etc/xdg/wmfs
+rm -R -f /etc/skel/.config/wmfs
 echo ""
 echo " remove startup script, config and conky."
 sleep 2s

@@ -23,7 +23,7 @@ fi
 #xcompmgr -cCfF -I20 -O10 -D1 -t-5 -l-5 -r4.2 -o.82
 
 ## launch panel --------------------------------------------------------
-sleep 1 && fbpanel -p pekwm &
+sleep 1 && lxpanel &
 
 ## setup auto-mounting -------------------------------------------------
 sleep 10 && udisks-glue --session &
@@ -42,4 +42,5 @@ nm-applet &
 #sleep 10s && ~/bin/tabdock.sh &
 
 ## launch pekwm --------------------------------------------------------
+~/.config/livarp-start.sh &
 exec pekwm

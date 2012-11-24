@@ -47,7 +47,7 @@ TEXT
 # infos section - with status_surface ----------------------------------
 ^s[610;9;\#B7B7B7;infos](1;spawn;wmfs_infos.sh) \
 # actions --------------------------------------------------------------
-^s[670;9;\#6DDD00;help](1;spawn;luakit ~/.help_center/fr/sessions/wmfs.html) \
+^s[670;9;\#6DDD00;help](1;spawn;luakit /usr/share/livarp/help_center/us/sessions/wmfs.html) \
 ^s[726;9;\#63B8FF;config](1;spawn;geany .config/wmfs/wmfs*)(3;spawn;geany .conky/.conkyrc_wmfs*) \
 ^s[792;9;\#E00B00;exit](1;spawn;shutdown.sh) \
 # frames ---------------------------------------------------------------

@@ -307,6 +307,11 @@ Plugin {
                 name = utils
                 icon = applications-utilities
                 item {
+                    name = conky-switcher
+                    icon = media-playlist-shuffle
+                    action = conky-switcher
+                }
+                item {
                     name = catfish
                     icon = gnome-searchtool
                     action = catfish
@@ -447,6 +452,25 @@ Plugin {
                         name = select
                         action = .xresources/cli_colors_tango.sh
                     }
+                }
+            }
+            menu {
+                name = screensaver
+                icon = xscreensaver
+                item {
+                    name = config screensaver
+                    icon = drakconf
+                    action = xscreensaver-demo
+                }
+                item {
+                    name = reload screensaver
+                    icon = gtk-refresh
+                    action = xscreensaver-command -restart
+                }
+                item {
+                    name = disable screensaver
+                    icon = dialog-close
+                    action = xscreensaver-command -exit
                 }
             }
             menu {

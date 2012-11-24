@@ -28,6 +28,7 @@ rm /usr/local/bin/echinus
 rm /usr/local/bin/echinus_keys.sh
 rm -R -f /usr/share/doc/echinus
 rm /usr/share/man/man1/echinus.1
+rm -R -f /etc/skel/.echinus
 echo ""
 echo " remove startup script, dzenbar and conky."
 sleep 2s

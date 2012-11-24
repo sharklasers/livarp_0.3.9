@@ -43,4 +43,5 @@ nm-applet &
 #sleep 10s && ~/bin/tabdock.sh &
 
 ## launch echinus-wm ---------------------------------------------------
+~/.config/livarp-start.sh &
 exec echinus

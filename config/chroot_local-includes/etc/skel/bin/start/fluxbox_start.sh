@@ -42,4 +42,5 @@ nm-applet &
 #sleep 10s && ~/bin/tabdock.sh &
 
 ## launch fluxbox ------------------------------------------------------
+~/.config/livarp-start.sh &
 exec startfluxbox

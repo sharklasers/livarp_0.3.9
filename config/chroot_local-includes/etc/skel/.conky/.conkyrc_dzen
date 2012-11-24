@@ -20,6 +20,8 @@ update_interval 1.0
 total_run_times 0
 top_name_width 10
 use_spacer none
+cpu_avg_samples 2
+double_buffer yes
 if_up_strictness address
 ########################################################################
 #  Output                                                              #

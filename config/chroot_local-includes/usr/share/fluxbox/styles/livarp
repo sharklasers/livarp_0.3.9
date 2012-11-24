@@ -3,7 +3,7 @@ style.author:           arpinux <contact@arpinux.org>
 style.date:             2012
 
 background:             fullscreen
-background.pixmap:      /usr/share/backgrounds/livarp_0.3.9_fluxbox.png
+!background.pixmap:      /usr/share/backgrounds/livarp_0.3.9_fluxbox.png
 
 window.font:                    -*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-1
 menu.frame.font:                -*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-1

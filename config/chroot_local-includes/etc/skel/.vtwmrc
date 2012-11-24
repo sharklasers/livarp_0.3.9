@@ -136,12 +136,12 @@ Button3 = : iconmgr : f.iconify # toggle iconify on right-clic
 
 ## keybinds ############################################################
 # launch applications
-"Return" = c : all :  ! "urxvtc &"         # default terminal keybind
-"d" = m4 : all : ! "dmenu-bind.sh &"      # Super+d: dmenu launcher
+"Return" = c : all :  ! "urxvtc &"         # Ctrl+Return: default terminal keybind
+"d" = m4 : all : ! "dmenu-bind.sh &"       # Super+d: dmenu launcher
 "t" = m4 : all : ! "urxvtc &"              # Super+t: terminal
 "r" = m4 : all : ! "urxvtc -e ranger &"    # Super+r: ranger cli filer
-"r" = s|m4 : all : ! "rox &"              # Super+Shift+r: rox-filer
-"w" = m4 : all : ! "firefox &"            # Super+w: firefox
+"r" = s|m4 : all : ! "rox &"               # Super+Shift+r: rox-filer
+"w" = m4 : all : ! "firefox &"             # Super+w: firefox
 "v" = m4 : all : ! "urxvtc -e alsamixer &" # Super+v: volume control
 # window navigation
 "Tab" = m : all :   f.warpring "next" # goto next window with Alt+Tab
@@ -156,7 +156,7 @@ Button3 = : iconmgr : f.iconify # toggle iconify on right-clic
 "i" = m4 : all : f.iconify  # Super+i: toggle iconify window
 "q" = m4 : all : f.delete   # Super+q: close window
 "x" = m4 : all : f.destroy  # Super+x: kill window
-# twm actions
+# vtwm actions
 "r" = c|m : all : f.restart                # Control+Alt+r to restart vtwm
 "q" = c|s : all : f.quit                   # Control+Shift+q to quit vtwm
 "q" = c|s|m : all : f.exec "dmenu-quit.sh" # Control+Shift+Alt+q to exit
@@ -181,6 +181,7 @@ menu "config" {
     "VTWM config"   ("green":"gray25")f.title
     "Edit"          f.exec "urxvtc -e vim .vtwmrc &"
     "Restart"       f.restart
+    "Startup"       f.exec "urxvtc -e vim bin/start/vtwm_start.sh &"
     "Keys"          f.exec "urxvtc --geometry 60x30+50+50 -e vtwm_keys.sh &"
     "Conky"         f.exec "urxvtc -e vim .conky/.conkyrc_vtwm &"
     "Control"       f.menu "window"

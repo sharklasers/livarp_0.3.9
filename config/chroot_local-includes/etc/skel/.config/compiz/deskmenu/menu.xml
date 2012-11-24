@@ -2,7 +2,6 @@
   <item type="launcher">
     <name mode="exec">date +%D\ %H:%M</name>
     <icon>gnome-panel-clock</icon>
-    <command>osmo</command>
   </item>
   <separator/>
   <item type="launcher">
@@ -151,6 +150,11 @@
     </menu>
     <menu name="utils">
       <item type="launcher">
+        <name>conky-switcher</name>
+        <icon>media-playlist-shuffle</icon>
+        <command>conky-switcher</command>
+      </item>
+      <item type="launcher">
         <name>archiver</name>
         <icon>file-roller</icon>
         <command>file-roller</command>
@@ -218,6 +222,23 @@
       <icon>gtk-edit</icon>
       <command>geany .startpage/index.html .startpage/style.css</command>
     </item>
+    <menu name="screensaver">
+      <item type="launcher">
+        <name>config</name>
+        <icon>gtk-edit</icon>
+        <command>xscreensaver-demo</command>
+      </item>
+      <item type="launcher">
+        <name>reload</name>
+        <icon>gtk-refresh</icon>
+        <command>xscreensaver-command -restart</command>
+      </item>
+      <item type="launcher">
+        <name>stop</name>
+        <icon>gtk-stop</icon>
+        <command>xscreensaver-command -exit</command>
+      </item>
+    </menu>
     <menu name="composite">
       <item type="launcher">
         <name>stop composite</name>
@@ -301,11 +322,6 @@
       <name>livarp help center</name>
       <icon>help</icon>
       <command>luakit /usr/share/livarp/help_center/index.html</command>
-    </item>
-    <item type="launcher">
-      <name>wiki livarp</name>
-      <command>luakit http://arpinux.org/x/doku.php/start:livarp:livarp_039_gb</command>
-      <icon>help</icon>
     </item>
     <item type="launcher">
       <name>wiki arpinux.org</name>

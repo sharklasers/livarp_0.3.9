@@ -1,3 +1,4 @@
+----------
 -- Mouse bindings -------------------------------------------
 root.buttons(awful.util.table.join(
     awful.button({ }, 3, function () mymainmenu:toggle() end),
@@ -10,5 +11,4 @@ clientbuttons = awful.util.table.join(
     awful.button(k_m, 1, function (c) client.focus = c; c:raise() end),
     awful.button(k_m, 1, awful.mouse.client.move),
     awful.button(k_m, 3, awful.mouse.client.resize))
---------------------------------------------------------------------------------
--------------------------------------------------------------
+-----------------------------------------

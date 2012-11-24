@@ -51,6 +51,7 @@
     [end]
     #------------------------------------------------------------- utils
     [submenu] (Utils)
+        [exec] (conky-switcher) {conky-switcher}
         [exec] (catfish) {catfish}
         [exec] (archiver) {file-roller}
         [exec] (calculator) {xcalc}
@@ -89,6 +90,11 @@
         [exec] (light composite) {xcompmgr_livarp -l}
         [exec] (medium composite) {xcompmgr_livarp -m}
         [exec] (full composite) {xcompmgr_livarp -f}
+    [end]
+    [submenu] (screensaver) {}
+        [exec] (configure) {xscreensaver-demo}
+        [exec] (reload) {xscreensaver-command -restart}
+        [exec] (stop) {xscreensaver-command -exit}
     [end]
     [submenu] (cli colorscheme)
         [submenu] (livarp)
@@ -129,8 +135,9 @@
 [submenu] (Livarp help)
     [exec] (help center) {luakit /usr/share/livarp/help_center/index.html}
     [exec] (main site) {luakit http://arpinux.org/livarp}
-    [exec] (livarp wiki) {luakit http://arpinux.org/x/doku.php/start:livarp}
     [exec] (livarp #irc) {luakit http://arpinux.org/livarp/irc.html}
 [end]
 [separator]
+#------------------------------------------------------------------ exit
 [exec] (Exit Menu) {shutdown.sh}
+[end]

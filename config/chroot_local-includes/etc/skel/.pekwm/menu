@@ -47,6 +47,7 @@
             Entry = "vim" { Actions = "Exec $TERM -e vim &" }
         }
   	    Submenu = "Tools" {
+            Entry = "conky-switch" { Actions = "Exec conky-switcher &" }
             Entry = "archiver" { Actions = "Exec file-roller &" }
   	        Entry = "searchtool" { Actions = "Exec catfish &" }
   	        Entry = "disk usage" { Actions = "Exec baobab &" }
@@ -65,9 +66,14 @@
             Entry = "medium effect" { Actions = "Exec xcompmgr_livarp -m &" }
             Entry = "full effect" { Actions = "Exec xcompmgr_livarp -f &" }
   		}
+        Submenu = "screensaver" {
+  		    Entry = "configure" { Actions = "Exec xscreensaver-demo &" }
+            Entry = "reload" { Actions = "Exec xsreensaver-command -restart &" }
+            Entry = "stop" { Actions = "Exec xscreensaver-command -exit &" }
+  		}
   		Entry = "display" { Actions = "Exec grandr &" }
         Submenu = "conky config" {
-            Entry = "edit conkyrc" { Actions = "Exec $EDITOR .conky/.conkyrc_pekwm &" }
+            Entry = "edit conkyrc" { Actions = "Exec geany .conky/.conkyrc_pekwm &" }
         }
         Submenu = "cli colorscheme" {
             Submenu = "livarp" {

@@ -6,17 +6,11 @@
 -- Principal -----------------------------------------------------------
 theme = {}
 --theme.wallpaper_cmd = { "nitrogen --restore" }
-theme.wallpaper_cmd = { "feh --bg-scale ".. os.getenv("HOME") .."/.config/awesome/current_wallpaper" }
-
---only for my xephyr test
---theme.wallpaper_cmd = { "feh --bg-scale /home/aphelion/tmp/testxephyr/current_wallpaper" }
+theme.wallpaper_cmd = { "feh --bg-fill ".. os.getenv("HOME") .."/.config/awesome/current_wallpaper" }
 ------------------------------------------------------------------------
 
 -- Name ----------------------------------------------------------------
 theme.path = os.getenv("HOME").."/.config/awesome/themes/livarp"
-
---only for my xephyr test
---theme.path = "/home/aphelion/tmp/testxephyr/themes/livarp"
 ------------------------------------------------------------------------
 
 -- Police --------------------------------------------------------------
@@ -46,14 +40,14 @@ white="#ffffff"
 
 alpha="dd"
 
-theme.notify_font= "DroidSansMono 7"
+--theme.notify_font= "DroidSansMono 7"
 theme.notify_font_color_1 = white
 theme.notify_font_color_2 = lgrey
 theme.notify_font_color_3 = red
-theme.notify_font_color_4 = white
-theme.notify_fg = theme.fg_focus
-theme.notify_bg = theme.bg_focus
-theme.notify_border = theme.border_focus
+--theme.notify_font_color_4 = white
+--theme.notify_fg = theme.fg_normal
+--theme.notify_bg = theme.bg_normal
+--theme.notify_border = theme.border_normal
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 theme.tooltip_font= "DroidSansMono 7"
 -- }}}
@@ -120,6 +114,32 @@ theme.widget_net    = theme.path.."/icons/down.png"
 theme.widget_bat    = theme.path.."/icons/bat.png"
 theme.widget_cal    = theme.path.."/icons/cal.png"
 theme.widget_info   = theme.path.."/icons/info.png"
+------------------------------------------------------------------------
+
+-- Titlebar  -------------------------------------------------------
+theme.titlebar_height = "14"
+theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/zenburn/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = "/usr/share/awesome/themes//zenburn/titlebar/close_normal.png"
+
+theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_inactive.png"
+
+theme.titlebar_sticky_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/sticky_normal_inactive.png"
+
+theme.titlebar_floating_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/floating_focus_active.png"
+theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/floating_normal_inactive.png"
+
+theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_inactive.png"
 ------------------------------------------------------------------------
 
 return theme

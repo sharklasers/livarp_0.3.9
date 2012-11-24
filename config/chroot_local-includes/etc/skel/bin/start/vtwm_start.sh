@@ -42,4 +42,5 @@ nm-applet &
 #sleep 10s && ~/bin/tabdock.sh &
 
 ## launch vtwm ---------------------------------------------------------
+~/.config/livarp-start.sh &
 exec vtwm

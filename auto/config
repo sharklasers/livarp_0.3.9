@@ -12,7 +12,7 @@
         --packages-lists "standard-x11" \
         --package "awesome awesome-extra vtwm fluxbox evilwm pekwm \
         compiz compiz-fusion-plugins-main compiz-fusion-plugins-extra compizconfig-settings-manager libdecoration0 \
-        rox-filer dmz-cursor-theme conky-all tint2 \
+        rox-filer dmz-cursor-theme conky-all tint2 lxpanel \
         xcompmgr transset-df lxappearance grandr fbxkb xdotool \
         catfish baobab ncdu file-roller unrar\
         mcabber weechat transmission-gtk filezilla claws-mail claws-mail-multi-notifier claws-mail-newmail-plugin claws-mail-trayicon flashplugin-nonfree screen \
@@ -23,13 +23,13 @@
         gtk2-engines-pixbuf murrine-themes \
         gparted dosfstools ntfs-3g ntfsprogs gksu synaptic bum \
         zenity x11-apps usbutils xosview xcolorsel \
-        firmware-linux firmware-linux-free firmware-linux-nonfree \
+        firmware-linux firmware-linux-free firmware-linux-nonfree ttf-liberation \
         w3m wpasupplicant wireless-tools network-manager-gnome network-manager-openvpn-gnome network-manager-vpnc-gnome \
         firmware-atheros firmware-ralink firmware-iwlwifi firmware-realtek firmware-b43-installer b43-fwcutter pppoeconf wvdial ndisgtk \
         libnotify-bin libconfuse0 lua5.1 liblua5.1-0-dev liblua5.1-filesystem0 tk8.4 python-xdg \
         suckless-tools ccze acpi laptop-detect python-lxml pyrenamer bc lm-sensors \
         build-essential git-core libimlib2-dev libxinerama-dev libx11-dev libwebkit-dev \
-        debian-keyring gnome-keyring libpam-gnome-keyring most curl apt-show-versions" \
+        debian-keyring gnome-keyring libpam-gnome-keyring most curl apt-show-versions upower" \
         --debian-installer live \
         --debian-installer-gui true \
         --syslinux-splash "/home/arp/arpinux_git/livarp_0.3.9/splash.png" \

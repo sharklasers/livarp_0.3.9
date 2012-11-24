@@ -34,7 +34,7 @@ urxvtd -q -f -o
 
 ## launch screensaver ##
 xscreensaver-command -exit
-xscreensaver &
+xscreensaver -no-splash &
 
 ## set cursor ##
 xsetroot -cursor_name left_ptr

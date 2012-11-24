@@ -31,7 +31,6 @@ local function show_process_info(inc_proc_offset, title_color,user_color, root_c
 	processstats = colorize(processstats, "LABEL", title_color)
 	processstats = colorize(processstats, "root", root_color)
 	processstats = colorize(processstats, os.getenv("USER"), user_color)
-	--processstats = processstats .. "\n<span color='white'>Temperatures :</span>\n"
 	return processstats
 end
 ---Top popup
@@ -89,7 +88,7 @@ end
 --=== Disk usage===
 local function get_diskinfo( my_title_color)
   str=awful.util.pread('/bin/df -h')
-  str=colorize(str,"Sys. de fichiers", my_title_color)
+  str=colorize(str,"Sys. fich.", my_title_color)
   str=colorize(str,"Taille", my_title_color)
   str=colorize(str,"Uti.", my_title_color)
   str=colorize(str,"Disp.", my_title_color)
@@ -112,23 +111,34 @@ end
 
 
 --=== Help===
-local function get_help( my_title_color)
-  str=awful.util.pread('/bin/cat /usr/share/awesome/help')
-  str=colorize(str,"Raccourcis", my_title_color)
-  str=colorize(str,"Commandes", my_title_color)
-  str=colorize(str,"Applications", my_title_color)
-  str=colorize(str,"Shifty", my_title_color)
-  str=colorize(str,"Moc", my_title_color)
-  str=colorize(str,"Système", my_title_color)    
-  str=colorize(str,"Clients", my_title_color)
-  str=colorize(str,"Widgets", my_title_color)
-  str=colorize(str,"General", "orange")
-  str=colorize(str,"Calendrier", "orange")
-  str=colorize(str,"Volume", "orange")  
-  str=colorize(str,"Cpu", "orange")
-  str=colorize(str,"Apt Update", "orange")
-  str=colorize(str,"Music", "orange")  
-  str=colorize(str,"Disks", "orange")  
+local function get_help( my_title_color, my_lang)
+	if my_lang == "fr" then
+		str=awful.util.pread('/bin/cat /usr/share/awesome/help')
+	else 
+		str=awful.util.pread('/bin/cat /usr/share/awesome/help-us')
+	end
+	  str=colorize(str,"Raccourcis", my_title_color)
+	  str=colorize(str,"Shortcuts", my_title_color)
+	  str=colorize(str,"Commandes", my_title_color)
+	  str=colorize(str,"Commands", my_title_color)
+	  str=colorize(str,"Applications", my_title_color)
+	  str=colorize(str,"Shifty", my_title_color)
+	  str=colorize(str,"Moc", my_title_color)
+	  str=colorize(str,"Système", my_title_color)
+	  str=colorize(str,"System", my_title_color)  
+	  str=colorize(str,"Clients", my_title_color)
+	  str=colorize(str,"Widgets", my_title_color)
+	  str=colorize(str,"General", "orange")
+	  str=colorize(str,"Général", "orange")
+	  str=colorize(str,"Calendrier", "orange")
+	  str=colorize(str,"Calendar", "orange")
+	  str=colorize(str,"Volume", "orange")  
+	  str=colorize(str,"Cpu", "orange")
+	  str=colorize(str,"Apt Update", "orange")
+	  str=colorize(str,"Music", "orange")
+	  str=colorize(str,"Musique", "orange") 
+	  str=colorize(str,"Disks", "orange")  
+	  str=colorize(str,"Disques", "orange")  
   return str
 end
 
@@ -136,10 +146,10 @@ function help(mywidget, args)
 mywidget_t=awful.tooltip({ 
 	objects = { mywidget },
 	timer_function = function ()	
-		return get_help( args["title_color"], args["used_color"], args["free_color"]) 
+		return get_help( args["title_color"], args["lang"]) 
 	end,
 	update_func = function ()	
-		return get_help( args["title_color"], args["used_color"], args["free_color"]) 	
+		return get_help( args["title_color"], args["lang"]) 	
 	end,
 	timeout= 10,
 })

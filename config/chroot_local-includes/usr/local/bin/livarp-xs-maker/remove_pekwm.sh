@@ -27,6 +27,7 @@ sleep 2s
 apt-get autoremove -y --force-yes pekwm
 rm -R -f /usr/share/pekwm
 rm /usr/local/bin/pekwm_keys.sh
+rm -R -f /etc/skel/.pekwm
 echo ""
 echo " remove startup script, config and conky."
 sleep 2s

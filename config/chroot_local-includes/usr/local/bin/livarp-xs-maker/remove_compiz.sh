@@ -47,6 +47,8 @@ rm $HOME/bin/start/compiz_start.sh
 rm $HOME/.conky/.conkyrc_compiz
 rm -R -f $HOME/.config/compiz/compizconfig
 rm -R -f $HOME/.emerald
+rm -R -f /etc/skel/.emerald
+rm -R -f /etc/skel/.config/compiz/compizconfig
 echo ""
 echo " compiz session removed "
 sleep 2s

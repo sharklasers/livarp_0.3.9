@@ -38,4 +38,5 @@ nm-applet &
 #sleep 10s && ~/bin/tabdock.sh &
 
 ## launch compiz -------------------------------------------------------
+~/.config/livarp-start.sh &
 exec compiz ccp

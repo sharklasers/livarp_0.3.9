@@ -42,6 +42,7 @@ nm-applet &
 #sleep 10s && ~/bin/tabdock.sh &
 
 ## launch dwm in a loop with a log file --------------------------------
+~/.config/livarp-start.sh &
 while true; do
     dwm 2> ~/.dwm.log
 done

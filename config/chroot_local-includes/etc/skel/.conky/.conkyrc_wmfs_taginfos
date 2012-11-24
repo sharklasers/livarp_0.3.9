@@ -28,6 +28,8 @@ short_units yes
 use_spacer none
 if_up_strictness address
 text_buffer_size 2048
+cpu_avg_samples 2
+double_buffer yes
 ########################################################################
 ## output                                                              #
 ########################################################################

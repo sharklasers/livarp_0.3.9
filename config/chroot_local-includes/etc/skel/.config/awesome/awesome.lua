@@ -1,4 +1,28 @@
--- Standard awesome library
+-- {{{ License
+--
+-- Awesome configuration, using awesome 3.4.6 on Livarp_0.3.9
+--   * By Aphelion
+--
+-- This work is licensed under the GNU GPL version 3 
+-- based off Adrian C. <anrxc@sysphere.org>'s rc.lua
+--
+-- }}}
+
+
+-- useful for debugging, marks the beginning of rc.lua exec
+print("Entered awesome.lua: " .. os.time())
+
+home       = os.getenv("HOME")
+config_dir = awful.util.getdir("config")
+scount = screen.count()
+
+-- Variables par défaut--
+-- config.lua --
+print("Entering config.lua: " .. os.time())
+dofile(config_dir .."/config.lua")
+-------------
+
+-- {{{ Libraries
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
@@ -10,73 +34,66 @@ require("naughty")
 require("teardrop")
 -- shifty - dynamic tagging library
 require("shifty")
---------------------------
+-- helpers function
+require("helpers")
+-- }}}
 
--- useful for debugging, marks the beginning of rc.lua exec
-print("Entered awesome.lua: " .. os.time())
+-- Modkeys
+print("Entering modkeys.lua: " .. os.time())
+dofile(config_dir .."/config/modkey.lua")
 
--- Variables --
-home       = os.getenv("HOME")
-config_dir = awful.util.getdir("config")
-scount = screen.count()
 
--- Configuration --
-print("Entering config.lua: " .. os.time())
-dofile(config_dir .."/config/config.lua")
--------------
-
--- Theme --
-print("Entering theme.lua: " .. os.time())
-dofile(config_dir .."/config/theme.lua")
--------------
-
--- Naughty configuration --
-naughty.config.default_preset.font = "DroidSansMono 7"
-
--- Applications prefere --
+-- Preffered apps
 print("Entering prefferedapps.lua: " .. os.time())
 dofile(config_dir .."/config/prefferedapps.lua")
--------------
 
--- Modkeys --
-print("Entering modkeys.lua: " .. os.time())
-dofile(config_dir .."/config/modkeys.lua")
--------------
-
--- Tags --
+-- tags.lua --
 print("Entering tags.lua: " .. os.time())
-dofile(config_dir .."/config/tags.lua")
--------------
+if taglist == "dynamic" then
+	dofile(config_dir .."/config/tags_dynamic.lua")
+else 
+	dofile(config_dir .."/config/tags_static.lua")
+end
+-----------------------------------------
 
--- Menu --
+-- menu.lua --
 print("Entering menu.lua: " .. os.time())
-dofile(config_dir .."/config/menu.lua")
+if menu_lang == "fr" then
+	dofile(config_dir .."/config/menu_fr.lua")
+else 
+	dofile(config_dir .."/config/menu_en.lua")
+end
 ----------
 
+
+-- Naughty configuration --
+naughty.config.default_preset.font = monofont
+naughty.config.default_preset.fg= beautiful.fg_focus
+naughty.config.default_preset.bg= beautiful.bg_focus
+naughty.config.default_preset.border_width= 1
+naughty.config.default_preset.border_color=beautiful.border_normal
+
+-- widgets.lua --
 print("Entering widgets.lua: " .. os.time())
--- Widgets definition and panels creation --
-dofile(config_dir .."/config/widgets.lua")
+if widget_mode == "graph" then
+	dofile(config_dir .."/config/widgets_graph.lua")
+else 
+	dofile(config_dir .."/config/widgets_text.lua")
+end
 ----------
 
 -- Mouse bindings --
 print("Entering mouse.lua: " .. os.time())
 dofile(config_dir .."/config/mouse.lua")
-----------
+
 
 -- Key bindings --
 print("Entering keys.lua: " .. os.time())
 dofile(config_dir .."/config/keys.lua")
-----------
 
 -- client signals --
 print("Entering signals.lua: " .. os.time())
 dofile(config_dir .."/config/signals.lua")
-----------
-
--- client autorun --
-print("Entering autorun.lua: " .. os.time())
-dofile(config_dir .."/config/autorun.lua")
-----------
 
 -- useful for debugging, marks the beginning of rc.lua exec
 print("Finish awesome.lua: " .. os.time())

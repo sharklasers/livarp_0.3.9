@@ -42,6 +42,7 @@ nm-applet &
 #sleep 10s && ~/bin/tabdock.sh &
 
 ## launch evilwm in a loop with a log file -----------------------------
+~/.config/livarp-start.sh &
 while true; do
     evilwm -snap 10 -term urxvtc -nosoliddrag 2> ~/.evilwm.log
 done

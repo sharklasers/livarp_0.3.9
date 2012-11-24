@@ -13,6 +13,8 @@ total_run_times 0
 uppercase no
 short_units yes
 use_spacer none
+cpu_avg_samples 2
+double_buffer yes
 if_up_strictness address
 ########################################################################
 #  Output                                                              #

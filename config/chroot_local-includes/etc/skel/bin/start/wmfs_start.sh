@@ -43,4 +43,5 @@ conkyd -c ~/.conky/.conkyrc_wmfs_launchers | while true; read line; do wmfs -c s
 #sleep 10s && ~/bin/tabdock.sh &
 
 ## launch wmfs ---------------------------------------------------------
+~/.config/livarp-start.sh &
 exec /usr/local/bin/wmfs

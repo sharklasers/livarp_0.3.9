@@ -1,4 +1,4 @@
--- Apps conf ----------------------------
+-------------
 terminal = "urxvtc"
 manager = "rox-filer"
 editor = "vim"
@@ -20,5 +20,5 @@ tableur = "gnumeric"
 calc = "xcalc"
 pdf = "evince"
 imageviewer = "gpicview"
-locker = "slock"
+locker = "xscreensaver-command -lock"
 -----------------------------------------

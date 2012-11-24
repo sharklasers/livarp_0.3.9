@@ -32,6 +32,7 @@ rm $HOME/bin/start/awesome_start.sh
 rm $HOME/bin/awesome_calendar.sh
 rm $HOME/.conky/.conkyrc_awesome
 rm -R -f $HOME/.config/awesome
+rm -R -f /etc/skel/.config/awesome
 echo ""
 echo " awesome session removed "
 sleep 2s

@@ -1,0 +1,4 @@
+[Command]
+FileManager=rox %s
+Terminal=urxvtc
+Logout=shutdown.sh

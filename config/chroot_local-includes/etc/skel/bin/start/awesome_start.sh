@@ -26,8 +26,7 @@ fi
 sleep 10 && udisks-glue --config .udisk-glue-awesome.conf --session &
 
 ## set awesome wallpaper -----------------------------------------------
-#nitrogen --restore ## uncomment to display our favorite wallpaper
-feh --no-xinerama --bg-fill /usr/share/backgrounds/livarp_0.3.9_awesome.png
+feh --no-xinerama --bg-fill .config/awesome/current_wallpaper
 
 ## launch conky --------------------------------------------------------
 conky -q -c ~/.conky/.conkyrc_awesome &
@@ -39,4 +38,5 @@ nm-applet &
 #sleep 10s && ~/bin/tabdock.sh &
 
 ## launch awesome ------------------------------------------------------
+~/.config/livarp-start.sh &
 exec awesome

@@ -26,6 +26,7 @@ echo " remove vtwm system files."
 sleep 2s
 apt-get autoremove -y --force-yes vtwm
 rm /usr/local/bin/vtwm_keys.sh
+rm -R -f /etc/skel/.vtwmrc
 echo ""
 echo " remove startup script, config and conky."
 sleep 2s

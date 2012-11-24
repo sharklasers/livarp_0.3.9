@@ -1,32 +1,29 @@
--- Signals --------------------------------------------------------------------------
+----------
 -- Signal function to execute when a new client appears.
--- {{{ Signals
 --
 
 -- {{{ Manage signal handler
 client.add_signal("manage", function (c, startup)
-    -- Add titlebar to floaters, but remove those from rule callback
-    --if awful.client.floating.get(c)
-    --or awful.layout.get(c.screen) == awful.layout.suit.floating then
-    --   if   c.titlebar then awful.titlebar.remove(c)
-    --    else awful.titlebar.add(c, {modkey = modkey, height=beautiful.titlebar_height}) end
-    --end
     -- Enable sloppy focus
 	   c:add_signal("mouse::enter", function(c)
-					   if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-					   and awful.client.focus.filter(c) then
-					   client.focus = c
-					end
-				 end)
+			   if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+			   and awful.client.focus.filter(c) then
+			   client.focus = c
+			end
+		 end)
     -- Client placement
-    if not startup then
-        awful.client.setslave(c)
- 
-        if  not c.size_hints.program_position
-        and not c.size_hints.user_position then
-            awful.placement.no_overlap(c)
-            awful.placement.no_offscreen(c)
-        end
+		if not startup then
+			awful.client.setslave(c)
+			if  not c.size_hints.program_position
+			and not c.size_hints.user_position then
+				awful.placement.no_overlap(c)
+				awful.placement.no_offscreen(c)
+			end
+		end
+	-- titlebar
+	    if enable_titlebar then
+        -- Add a titlebar
+        awful.titlebar.add(c, { modkey = modkey, height = beautiful.titlebar_height })
     end
 end)
 -- }}}
@@ -57,5 +54,4 @@ for s = 1, scount do screen[s]:add_signal("arrange", function ()
     end
   end)
 end
- 
--- }}}
+-----------------------------------------

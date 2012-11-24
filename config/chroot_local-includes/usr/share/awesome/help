@@ -1,40 +1,40 @@
- Keybinds	Commands				Keybinds	Commands
+ Raccourcis	Commandes				Raccourcis	Commandes
  Applications						Widgets
- Alt+r/Alt+F2	Run					General
- Alt+Enter	terminal				Ctrl+Alt+v	toggle on/off bottom-bar
+ Alt+r/Alt+F2	exécute					Général
+ Alt+Entrée	terminal				Ctrl+Alt+b/t	afficher/masquer la bottom-bar/top-bar
  Alt+f		ranger
- Alt+Shift+f	rox-filer				Calendar	
- Alt+w		luakit					button1/3	previous/next month	
- Alt+Shift+w	firefox					Ctrl+button1/3	previous/next year
- Alt+F3		search the Web	
- Alt+m		music player(cli)			Volume
- Alt+i		Weechat					button4/5	decrease/increase Master channel 
-							button1	toggle mute Master channel
- Clients						Ctrl+button1	toggle mute PCM channel
- Alt+q		close the client			button3	volume control with alsamixer
- Alt+button1	move the client				
- Alt+button3	resize the client			Cpu
- Alt+j/k	focus client previous/next		button3	launch Htop	
- Ctrl+Alt+Space	free Mode				
+ Alt+Shift+f	rox-filer				Calendrier	
+ Alt+w		luakit					Clic g/d	mois précédent/mois suivant	
+ Alt+Shift+w	firefox					Ctrl+clic g/d	année précédente/année suivante
+ Alt+F3		recherche Web	
+ Alt+m		mocp player(cli)			Volume
+ Alt+i		weechat					molette h/b	augmente/réduit le volume Master 
+							clic gauche	sourdine Master
+ Clients						Ctrl+clic g	sourdine PCM
+ Alt+q		fermer le client			clic droit	alsamixer
+ Alt+clic g	déplacer				
+ Alt+clic d	redimmensionner				Cpu
+ Alt+j/k	focus client précédent/suivant		clic gauche	htop	
+ Ctrl+Alt+Space	mode flottant				
 							Apt Update
- System						    	button3	system update
+ Système						clic gauche	mise a jour du système
  Alt+p		menu
- PrintScr	screenshot				Disks
- Ctrl+Alt+r	Reload awesome				button1	open rox-filer
- Ctrl+Alt+q	Exit awesome				button3	ncdu
+ PrintScr	capture d'écran				Disques
+ Ctrl+Alt+r	recharger awesome			clic gauche	rox-filer
+ Ctrl+Alt+q	quitter awesome				clic droit	ncdu
 
- Shifty							Music
- Alt+a		create a new tag			button1	Play/Pause
- Alt+Shift+r	rename a Tag				button3	Stop
- Alt+Shift+d	delete current tag			button4/5	previous/next title
- Alt+Left	previous Tag				button2	open player
- Alt+Right	next Tag
- Alt+Shift+n	move client to previous tag
- Alt+n		move client to next tag
- Alt+Space	layout switcher
+ Shifty							Musique
+ Alt+a		créer un nouveau tag			clic gauche	play/pause
+ Alt+Shift+r	renommer un Tag				clic droit	stop
+ Alt+Shift+d	supprimer le tag courant		molette h/b	titre suivant/précédent
+ Alt+gauche	tag précédent				clic central	ouvrir le player
+ Alt+droite	tag suivant
+ Alt+Shift+n	déplace le client vers le tag précédent
+ Alt+n		déplace le client vers le tag suivant
+ Alt+Space	changement de layout
 
  Moc
- Ctrl+Left	previous title
- Ctrl+Right	next title
- Ctrl+Up	stop
- Ctrl+Down	play/pause
+ Ctrl+gauche	titre précédent
+ Ctrl+droite	titre Suivant
+ Ctrl+haute	stop
+ Ctrl+basse	play/pause
