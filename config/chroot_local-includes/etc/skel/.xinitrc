@@ -48,7 +48,7 @@ feh --no-xinerama --bg-fill /usr/share/backgrounds/livarp_start.png
 ## keyboard-selector ##
 ## safe to remove after installation
 if [ -d /home/user ]; then
-    /usr/local/bin/keyboard_selector.sh
+    zenity --entry --title='keyboard-selector' --text='livarp keyboard selector\nselect or type your country code' \fr be es gb us ru | xargs setxkbmap
 fi
 
 #-----------------------------------------------------------------------
