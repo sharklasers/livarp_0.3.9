@@ -12,10 +12,10 @@ capture = {
 
 -- Preferences submenu -------------------------------------------------
 awesomemenu = {
-    { "themes", mythememenu },
+    { "thèmes", mythememenu },
     { "wallpapers", mywallmenu },
     { "-----------"},
-    { "edit config.lua", editor_cmd .." ".. config_dir .."/config.lua"},
+    { "éditer config.lua", editor_cmd .." ".. config_dir .."/config.lua"},
     { "-----------"},
     { "éditer keys.lua", editor_cmd .." ".. config_dir .."/config/keys.lua"},
     { "éditer menu.lua", editor_cmd .." ".. config_dir .."/config/menu.lua"},
@@ -84,7 +84,7 @@ multimedia = {
 internet = {
    { "navigateur luakit", "luakit" },
    { "navigateur firefox", "firefox" },
-   { "client IRC weechat", terminal.." -e weechat-ncurses" },
+   { "client IRC weechat", terminal.." -e weechat-curses" },
    { "client jabber mcabber", terminal.." -e mcabber" },
    { "client mail claws-mail", "claws-mail" },
    { "client FTP filezilla", "filezilla" },

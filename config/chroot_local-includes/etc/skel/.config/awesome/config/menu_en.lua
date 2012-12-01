@@ -84,7 +84,7 @@ multimedia = {
 internet = {
    { "luakit browser", "luakit" },
    { "firefox browser", "firefox" },
-   { "IRC client weechat", terminal.." -e weechat-ncurses" },
+   { "IRC client weechat", terminal.." -e weechat-curses" },
    { "jabber client mcabber", terminal.." -e mcabber" },
    { "mail cient claws-mail", "claws-mail" },
    { "FTP client filezilla", "filezilla" },
@@ -107,7 +107,7 @@ applications = {
     { "internet", internet },
     { "multimedia", multimedia },
     { "graphics", graphismmenu },
-    { "bureautique", bureautique },
+    { "office", bureautique },
     { "accessories", accessoires },
 }
 systemmenu = {

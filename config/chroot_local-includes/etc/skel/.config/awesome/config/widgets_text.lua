@@ -230,10 +230,10 @@ if mem_enable then
 	vicious.register(memwidget, vicious.widgets.mem, 
 	function (widget, args)
 		if show_icons then
-			memwidget_t:set_text("Utilisé : " .. args[2] .. "/" .. args[3] .. "\nLibre : " .. args[4] .. "\n\nSwap : " .. args[5] .."/" .. args[7])
+			memwidget_t:set_text("Used : " .. args[2] .. "/" .. args[3] .. "\nFree : " .. args[4] .. "\n\nSwap : " .. args[5] .."/" .. args[7])
 			return "<span color=\""..beautiful.fg_normal.."\" size=\"small\">" .. args[1] .. "%</span>"
 		else
-			memwidget_t:set_text("Utilisé : " .. args[2] .. "/" .. args[3] .. "\nLibre : " .. args[4] .. "\n\nSwap : " .. args[5] .."/" .. args[7])
+			memwidget_t:set_text("Used : " .. args[2] .. "/" .. args[3] .. "\nFree : " .. args[4] .. "\n\nSwap : " .. args[5] .."/" .. args[7])
 			return "<span color=\""..beautiful.fg_normal.."\" size=\"small\">Mem : " .. args[1] .. "%</span>"
 		end
 	end, 59)
@@ -273,8 +273,8 @@ if diskbootbar_enable then
 			return "<span color=\"purple\" size=\"small\">boot " .. args["{/boot used_p}"] .. "% used (" .. args["{/boot avail_gb}"] .. " GiB free)</span>"
 		elseif args["{/boot used_p}"] >= 99 and args["{/boot used_p}"] <= 100 then
 			naughty.notify({ 
-				title = "Avertissement Disque dur", 
-				text = "Plus d'espace libre sur boot!\nFaite de la place.", 
+				title = "Disks Warning", 
+				text = "No more space left on boot partition!\nClean up your disk.", 
 				timeout = 10, position = "top_right", 
 				fg = beautiful.fg_urgent, 
 				bg = beautiful.bg_urgent 
@@ -296,8 +296,8 @@ if diskrootbar_enable then
 			return "<span color=\"purple\" size=\"small\">root " .. args["{/ used_p}"] .. "% used (" .. args["{/ avail_gb}"] .. " GiB free)</span>"
 		elseif args["{/ used_p}"] >= 99 and args["{/ used_p}"] <= 100 then
 			naughty.notify({ 
-				title = "Avertissement Disque dur", 
-				text = "Plus d'espace libre sur root!\nFaite de la place.", 
+				title = "Disks Warning", 
+				text = "No more space left on root partition!\nClean up your disk.", 
 				timeout = 10, position = "top_right", 
 				fg = beautiful.fg_urgent, 
 				bg = beautiful.bg_urgent 
@@ -319,8 +319,8 @@ vicious.register(fsh, vicious.widgets.fs,
 			return "<span color=\"purple\" size=\"small\">home " .. args["{/home used_p}"] .. "% used (" .. args["{/home avail_gb}"] .. " GiB free)</span>"
 		elseif args["{/home used_p}"] >= 99 and args["{/home used_p}"] <= 100 then
 			naughty.notify({ 
-				title = "Avertissement Disque dur", 
-				text = "Plus d'espace libre sur home!\nFaite de la place.", 
+				title = "Disks Warning", 
+				text = "No more space left on home partition!\nClean up your disk.", 
 				timeout = 10, position = "top_right", 
 				fg = beautiful.fg_urgent, 
 				bg = beautiful.bg_urgent 
@@ -361,14 +361,14 @@ vicious.register(batwidget, vicious.widgets.bat,
 		else
 			if args[2] < 15 then
 				naughty.notify({
-				title = "Avertissement Batterie",
-				text = "Batterie faible ! "..args[2].."% restant!\nBranchez vous sur le secteur.",
+				title = "Warning Battery",
+				text = "Low Battery ! "..args[2].."% .",
 				timeout = 10,
 				fg = beautiful.fg_urgent,
 				bg = beautiful.bg_urgent
 				})
 			end
-			bat_t:set_text("Niveau: " .. args[2] .. "% restant !\nEtat: " .. args[1] .. "\nTemps restant: " .. args[3] .."")
+			bat_t:set_text("Level: " .. args[2] .. "% \nState: " .. args[1] .. "\nTime left: " .. args[3] .."")
 			if show_icons then
 				if beautiful.widget_cpu then
 					baticon.image = image(beautiful.widget_bat)
@@ -545,10 +545,10 @@ tb_moc = widget({ type = "textbox", align = "right" })
 			   moc_curtime = string.gsub(string.match(moc_info, "CurrentTime: %d*:%d*"), "CurrentTime: ","")
 			   moc_totaltime = string.gsub(string.match(moc_info, "TotalTime: %d*:%d*"), "TotalTime: ","")
 			   if moc_artist == "" then
-				   moc_artist = "artiste inconnu"
+				   moc_artist = "unknown artist"
 			   end
 			   if moc_title == "" then
-				   moc_title = "titre inconnu"
+				   moc_title = "unknown title"
 			   end
 				-- moc_title = string.format("%.5c", moc_title)
 			   moc_string = "<span color=\""..beautiful.fg_normal.."\" size=\"small\">"..moc_artist .. " - " .. moc_title .. "(" .. moc_curtime .. "/" .. moc_totaltime .. ")</span>"
@@ -556,7 +556,7 @@ tb_moc = widget({ type = "textbox", align = "right" })
 				   moc_string = "<span color=\""..beautiful.fg_normal.."\" size=\"small\">PAUSE - " .. moc_string .. "</span>"
 			   end
 		   else
-			   moc_string = "<span color=\""..beautiful.fg_normal.."\" size=\"small\">-- Lecture stoppée --</span>"
+			   moc_string = "<span color=\""..beautiful.fg_normal.."\" size=\"small\">-- not playing --</span>"
 		   end
 	else
 		   moc_string = "<span color=\""..beautiful.fg_normal.."\" size=\"small\">Moc Stopped</span>"
@@ -676,7 +676,7 @@ if weather_enable then
 	weather_t = awful.tooltip({ objects = { weatherwidget },})
 	vicious.register(weatherwidget, vicious.widgets.weather,
 					function (widget, args)
-						weather_t:set_text("Ville: " .. args["{city}"] .."\nVent: " .. args["{windkmh}"] .. "km/h " .. args["{wind}"] .. "\nCiel: " .. args["{sky}"] .. "\nHumidité: " .. args["{humid}"] .. "%")
+						weather_t:set_text("City: " .. args["{city}"] .."\nWind: " .. args["{windkmh}"] .. "km/h " .. args["{wind}"] .. "\nSky: " .. args["{sky}"] .. "\nHumid: " .. args["{humid}"] .. "%")
 						return "<span color=\""..beautiful.fg_normal.."\" size=\"small\">" .. args["{tempc}"] .. "C</span>"
 					end, 1800, weather_code)
 					--'1800': check every 30 minutes.
